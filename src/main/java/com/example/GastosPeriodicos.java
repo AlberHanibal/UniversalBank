@@ -4,12 +4,12 @@ import java.io.Serializable;
 import java.time.LocalDate;
 
 public class GastosPeriodicos implements Serializable {
-    public Double cantidadTotal;
-    public Double cantidadPagada;
-    public LocalDate fechaInicio;
-    public LocalDate fechaSiguientePago;
-    public int plazosTiempo; //numero de dias entre cada plazo
-    public Double plazosDinero;
+    private Double cantidadTotal;
+    private Double cantidadPagada;
+    private LocalDate fechaInicio;
+    private LocalDate fechaSiguientePago;
+    private int plazosTiempo; //numero de dias entre cada plazo
+    private Double plazosDinero;
 
     public GastosPeriodicos(Double cantidadTotal, Double cantidadPagada, LocalDate fechaInicio,
             LocalDate fechaSiguientePago, int plazosTiempo, Double plazosDinero) {

@@ -4,11 +4,11 @@ import java.io.Serializable;
 import java.time.LocalDate;
 
 public class Tarjeta implements Serializable {
-    public int id;
-    public Double limiteDiario;
-    public String pin;
-    public LocalDate fechaCaducidad;
-    public boolean cancelada;
+    private int id;
+    private Double limiteDiario;
+    private String pin;
+    private LocalDate fechaCaducidad;
+    private boolean cancelada;
 
     public Tarjeta(int id, Double limiteDiario, String pin, LocalDate fechaCaducidad) {
         this.id = id;

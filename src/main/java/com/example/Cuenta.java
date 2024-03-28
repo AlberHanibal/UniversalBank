@@ -4,11 +4,11 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Cuenta implements Serializable {
-    public int id;
-    public Double balance;
-    public ArrayList<Tarjeta> listaTarjetas[];
-    public ArrayList<Movimiento> historialMovimientos[];
-    public ArrayList<GastosPeriodicos> listaGastos[];
+    private int id;
+    private Double balance;
+    private ArrayList<Tarjeta> listaTarjetas[];
+    private ArrayList<Movimiento> historialMovimientos[];
+    private ArrayList<GastosPeriodicos> listaGastos[];
 
     public Cuenta(int id, Double balance, ArrayList<Tarjeta>[] listaTarjetas,
             ArrayList<Movimiento>[] historialMovimientos, ArrayList<GastosPeriodicos>[] listaGastos) {

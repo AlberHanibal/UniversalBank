@@ -4,10 +4,10 @@ import java.io.Serializable;
 import java.time.LocalDate;
 
 public class Movimiento implements Serializable {
-    public Double cantidad;
-    public String asunto;
-    public LocalDate fecha;
-    public String tipo;
+    private Double cantidad;
+    private String asunto;
+    private LocalDate fecha;
+    private String tipo;
 
     public Movimiento(Double cantidad, String asunto, String tipo) {
         this.cantidad = cantidad;

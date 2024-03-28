@@ -4,11 +4,11 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Usuario implements Serializable {
-    public String usuario;
-    public String contraseña;
-    public ArrayList<Cuenta> listaCuentas[];
-    public String nombre;
-    public String apellidos;
+    private String usuario;
+    private String contraseña;
+    private ArrayList<Cuenta> listaCuentas[];
+    private String nombre;
+    private String apellidos;
 
     public Usuario(String usuario, String contraseña, ArrayList<Cuenta>[] listaCuentas, String nombre,
             String apellidos) {
