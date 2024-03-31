@@ -6,17 +6,17 @@ import java.util.ArrayList;
 public class Usuario implements Serializable {
     private String usuario;
     private String contraseña;
-    private ArrayList<Cuenta> listaCuentas[];
+    private ArrayList<Cuenta> listaCuentas;
     private String nombre;
     private String apellidos;
 
-    public Usuario(String usuario, String contraseña, ArrayList<Cuenta>[] listaCuentas, String nombre,
+    public Usuario(String usuario, String contraseña, ArrayList<Cuenta> listaCuentas, String nombre,
             String apellidos) {
         this.usuario = usuario;
         this.contraseña = contraseña;
         this.listaCuentas = listaCuentas;
-        this.nombre = nombre;
-        this.apellidos = apellidos;
+        this.nombre = (nombre != null) ? nombre : "";
+        this.apellidos = (apellidos != null) ? apellidos : "";
     }
 
     public String getUsuario() {
@@ -35,11 +35,11 @@ public class Usuario implements Serializable {
         this.contraseña = contraseña;
     }
 
-    public ArrayList<Cuenta>[] getListaCuentas() {
+    public ArrayList<Cuenta> getListaCuentas() {
         return listaCuentas;
     }
 
-    public void setListaCuentas(ArrayList<Cuenta>[] listaCuentas) {
+    public void setListaCuentas(ArrayList<Cuenta> listaCuentas) {
         this.listaCuentas = listaCuentas;
     }
 

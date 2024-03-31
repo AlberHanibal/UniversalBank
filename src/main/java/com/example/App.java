@@ -8,9 +8,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-/**
- * Plantilla de FXML y SceneBuilder
- */
 public class App extends Application {
 
     private static Scene scene;
