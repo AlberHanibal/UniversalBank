@@ -39,7 +39,7 @@
    <bottom>
       <HBox alignment="BASELINE_CENTER" BorderPane.alignment="CENTER">
          <children>
-            <Button alignment="CENTER" minHeight="39.0" minWidth="110.0" mnemonicParsing="false" text="Crear Usuario">
+            <Button alignment="CENTER" minHeight="39.0" minWidth="110.0" mnemonicParsing="false" onAction="#CrearUsuario" text="Crear Usuario">
                <font>
                   <Font size="18.0" />
                </font>

@@ -4,7 +4,9 @@ import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class ControladorLogin{
 
@@ -24,8 +26,20 @@ public class ControladorLogin{
 
         System.out.println(nombre + " " + contraseña);
 
-        //Codigo comprobación de usuario----------------
+        // Codigo comprobación de usuario----------------
 
         //App.getScene().setRoot(root);
+    }
+
+    @FXML
+    private void CrearUsuario() throws IOException {
+        FXMLLoader loader = new FXMLLoader(App.class.getResource("Formulario.fxml"));
+        Parent root = loader.load();
+
+        Stage stage2 = new Stage();
+        stage2.setScene(new Scene(root));
+        stage2.setTitle("Formulario creación de usuario");
+
+        stage2.show();
     }
 }
