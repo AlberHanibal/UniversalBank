@@ -1,4 +1,4 @@
-package com.example;
+package com.jovellanos;
 
 import org.bson.Document;
 import com.mongodb.client.MongoClient;

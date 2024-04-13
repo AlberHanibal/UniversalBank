@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 com\example\Cuenta.class
 com\example\GastosPeriodicos.class
 module-info.class
@@ -7,3 +8,14 @@ com\example\Tarjeta.class
 com\example\Movimiento.class
 com\example\ControladorFormulario.class
 com\example\ControladorLogin.class
+=======
+com\jovellanos\Tarjeta.class
+com\jovellanos\GastosPeriodicos.class
+com\jovellanos\ControladorFormulario.class
+com\jovellanos\Usuario.class
+com\jovellanos\Movimiento.class
+com\jovellanos\ControladorMongoDB.class
+com\jovellanos\App.class
+com\jovellanos\Cuenta.class
+com\jovellanos\ControladorLogin.class
+>>>>>>> main

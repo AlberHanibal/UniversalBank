@@ -1,9 +1,8 @@
-package com.example;
+package com.jovellanos;
 
-import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Movimiento implements Serializable {
+public class Movimiento {
     private Double cantidad;
     private String asunto;
     private LocalDate fecha;

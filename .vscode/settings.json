@@ -1,0 +1,8 @@
+{
+    "maven.terminal.favorites": [
+        {
+            "command": "clean javafx:run",
+            "debug": false
+        }
+    ]
+}

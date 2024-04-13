@@ -1,4 +1,4 @@
-package com.example;
+package com.jovellanos;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

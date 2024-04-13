@@ -1,4 +1,4 @@
-package com.example;
+package com.jovellanos;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -10,7 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-public class ControladorFormulario{
+public class ControladorFormulario {
 
     @FXML
     private TextField TextFieldUsuario;
@@ -50,14 +50,23 @@ public class ControladorFormulario{
             } else {
                 LabelContraseña.setTextFill(Color.BLACK);
             }
-            
+
             return;
         }
 
         ArrayList<Cuenta> lista = new ArrayList<Cuenta>();
         Usuario u = new Usuario(usuario, contraseña, lista, nombre, apellidos);
 
-        System.out.println(u.getUsuario() + " " + u.getContraseña() + " " + u.getNombre() + " " + u.getApellidos()); // Codigo temporal para comprobar que se crea el usuario bien
+        System.out.println(u.getUsuario() + " " + u.getContraseña() + " " + u.getNombre() + " " + u.getApellidos()); // Codigo
+                                                                                                                     // temporal
+                                                                                                                     // para
+                                                                                                                     // comprobar
+                                                                                                                     // que
+                                                                                                                     // se
+                                                                                                                     // crea
+                                                                                                                     // el
+                                                                                                                     // usuario
+                                                                                                                     // bien
 
         Stage stage = (Stage) TextFieldUsuario.getScene().getWindow(); // Cerrar la ventana una vez creado el usuario
         stage.close();

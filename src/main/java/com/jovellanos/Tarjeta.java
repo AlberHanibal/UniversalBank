@@ -1,9 +1,8 @@
-package com.example;
+package com.jovellanos;
 
-import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Tarjeta implements Serializable {
+public class Tarjeta {
     private int id;
     private Double limiteDiario;
     private String pin;

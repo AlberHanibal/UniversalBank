@@ -1,9 +1,8 @@
-package com.example;
+package com.jovellanos;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Cuenta implements Serializable {
+public class Cuenta {
     private int id;
     private Double balance;
     private ArrayList<Tarjeta> listaTarjetas[];

@@ -1,4 +1,4 @@
-package com.example;
+package com.jovellanos;
 
 import java.io.IOException;
 import javafx.fxml.FXML;
@@ -8,7 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class ControladorLogin{
+public class ControladorLogin {
 
     @FXML
     private TextField TextFieldUsuario;
@@ -18,8 +18,8 @@ public class ControladorLogin{
 
     @FXML
     private void Continuar() throws IOException {
-        //FXMLLoader loader = new FXMLLoader(App.class.getResource("Mesa.fxml"));
-        //Parent root = loader.load();
+        // FXMLLoader loader = new FXMLLoader(App.class.getResource("Mesa.fxml"));
+        // Parent root = loader.load();
 
         String nombre = TextFieldUsuario.getText();
         String contraseña = TextFieldContraseña.getText();
@@ -28,7 +28,7 @@ public class ControladorLogin{
 
         // Codigo comprobación de usuario----------------
 
-        //App.getScene().setRoot(root);
+        // App.getScene().setRoot(root);
     }
 
     @FXML

@@ -1,9 +1,8 @@
-package com.example;
+package com.jovellanos;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Usuario implements Serializable {
+public class Usuario {
     private String usuario;
     private String contraseña;
     private ArrayList<Cuenta> listaCuentas;

@@ -1,14 +1,13 @@
-package com.example;
+package com.jovellanos;
 
-import java.io.Serializable;
 import java.time.LocalDate;
 
-public class GastosPeriodicos implements Serializable {
+public class GastosPeriodicos {
     private Double cantidadTotal;
     private Double cantidadPagada;
     private LocalDate fechaInicio;
     private LocalDate fechaSiguientePago;
-    private int plazosTiempo; //numero de dias entre cada plazo
+    private int plazosTiempo; // numero de dias entre cada plazo
     private Double plazosDinero;
 
     public GastosPeriodicos(Double cantidadTotal, Double cantidadPagada, LocalDate fechaInicio,
