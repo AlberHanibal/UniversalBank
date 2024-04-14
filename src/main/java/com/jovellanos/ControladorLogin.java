@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -18,17 +20,28 @@ public class ControladorLogin {
 
     @FXML
     private void Continuar() throws IOException {
-        // FXMLLoader loader = new FXMLLoader(App.class.getResource("Mesa.fxml"));
-        // Parent root = loader.load();
+        
 
         String nombre = TextFieldUsuario.getText();
         String contraseña = TextFieldContraseña.getText();
 
-        System.out.println(nombre + " " + contraseña);
+        ControladorMongoDB ControlMongo = new ControladorMongoDB();
+        Boolean existe = ControlMongo.ComprobarUsuario(nombre, contraseña);
 
-        // Codigo comprobación de usuario----------------
+        if (existe) {
+            FXMLLoader loader = new FXMLLoader(App.class.getResource("SelectorCuenta.fxml"));
+            Parent root = loader.load();
+            
+            App.getScene().setRoot(root);
+        } else {
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("El usuario o la contraseña son incorrectos.");
+            alert.showAndWait();
 
-        // App.getScene().setRoot(root);
+            return;
+        }
     }
 
     @FXML
