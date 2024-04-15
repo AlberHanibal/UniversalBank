@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.SubScene?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="671.0" prefWidth="1306.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jovellanos.ControladorPrincipal">
+   <left>
+      <VBox prefHeight="671.0" prefWidth="236.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="boton1" mnemonicParsing="false" onAction="#clickSiguiente1" text="Button" />
+            <Button fx:id="boton2" mnemonicParsing="false" onAction="#clickSiguiente2" text="Button" />
+         </children>
+      </VBox>
+   </left>
+   <top>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </top>
+   <center>
+      <SubScene fx:id="sceneCentral" height="429.0" width="742.0" BorderPane.alignment="CENTER">
+        <root>
+          <Region />
+        </root>
+      </SubScene>
+   </center>
+</BorderPane>
