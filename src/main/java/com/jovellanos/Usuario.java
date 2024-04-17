@@ -3,27 +3,27 @@ package com.jovellanos;
 import java.util.ArrayList;
 
 public class Usuario {
-    private String usuario;
+    private String username;
     private String contraseña;
     private ArrayList<Cuenta> listaCuentas;
     private String nombre;
     private String apellidos;
 
-    public Usuario(String usuario, String contraseña, ArrayList<Cuenta> listaCuentas, String nombre,
+    public Usuario(String username, String contraseña, ArrayList<Cuenta> listaCuentas, String nombre,
             String apellidos) {
-        this.usuario = usuario;
+        this.username = username;
         this.contraseña = contraseña;
         this.listaCuentas = listaCuentas;
         this.nombre = (nombre != null) ? nombre : "";
         this.apellidos = (apellidos != null) ? apellidos : "";
     }
 
-    public String getUsuario() {
-        return usuario;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getContraseña() {
