@@ -38,7 +38,7 @@ public class ControladorFormulario {
     private Label LabelConfirmarPass;
 
     @FXML
-    private void Continuar()  {
+    private void Continuar() {
         String username = TextFieldUsuario.getText();
         String contraseña = TextFieldContraseña.getText();
         String confirmarPass = TextFieldConfirmarPass.getText();
