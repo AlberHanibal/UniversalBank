@@ -19,7 +19,7 @@ public class ControladorLogin {
     private TextField TextFieldContraseña;
 
     @FXML
-    private void Continuar() throws IOException {
+    private void Continuar() {
         
 
         String nombre = TextFieldUsuario.getText();
@@ -29,10 +29,7 @@ public class ControladorLogin {
         Boolean existe = ControlMongo.ComprobarUsuario(nombre, contraseña);
 
         if (existe) {
-            FXMLLoader loader = new FXMLLoader(App.class.getResource("SelectorCuenta.fxml"));
-            Parent root = loader.load();
-            
-            App.getScene().setRoot(root);
+            App.getScene().setRoot(App.cargarEscena("SelectorCuenta.fxml"));
         } else {
             Alert alert = new Alert(AlertType.ERROR);
             alert.setTitle("Error");
