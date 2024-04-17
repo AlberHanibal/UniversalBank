@@ -40,15 +40,15 @@ public class ControladorFormulario {
 
     @FXML
     private void Continuar() throws IOException {
-        String usuario = TextFieldUsuario.getText();
+        String username = TextFieldUsuario.getText();
         String contraseña = TextFieldContraseña.getText();
         String confirmarPass = TextFieldConfirmarPass.getText();
         String nombre = TextFieldNombre.getText();
         String apellidos = TextFieldApellidos.getText();
 
         // Comprobar campos obligatorios y poner en rojo los que esten vacios
-        if (usuario.isEmpty() || contraseña.isEmpty() || confirmarPass.isEmpty()) {
-            if (usuario.isEmpty()) {
+        if (username.isEmpty() || contraseña.isEmpty() || confirmarPass.isEmpty()) {
+            if (username.isEmpty()) {
                 LabelUsuario.setTextFill(Color.RED);
             } else {
                 LabelUsuario.setTextFill(Color.BLACK);
@@ -81,7 +81,7 @@ public class ControladorFormulario {
         }
         
         ArrayList<Cuenta> lista = new ArrayList<Cuenta>();
-        Usuario u = new Usuario(usuario, contraseña, lista, nombre, apellidos);
+        Usuario u = new Usuario(username, contraseña, lista, nombre, apellidos);
 
         ControladorMongoDB ControlMongo = new ControladorMongoDB();
         ControlMongo.guardarUsuario(u);

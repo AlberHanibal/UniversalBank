@@ -22,11 +22,11 @@ public class ControladorLogin {
     private void Continuar() throws IOException {
         
 
-        String nombre = TextFieldUsuario.getText();
+        String username = TextFieldUsuario.getText();
         String contraseña = TextFieldContraseña.getText();
 
         ControladorMongoDB ControlMongo = new ControladorMongoDB();
-        Boolean existe = ControlMongo.ComprobarUsuario(nombre, contraseña);
+        Boolean existe = ControlMongo.ComprobarUsuario(username, contraseña);
 
         if (existe) {
             FXMLLoader loader = new FXMLLoader(App.class.getResource("SelectorCuenta.fxml"));

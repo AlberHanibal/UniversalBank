@@ -24,7 +24,7 @@ public class ControladorMongoDB {
 
     public void guardarUsuario(Usuario usuario) {
         // Lógica para guardar un usuario en la base de datos
-        Document doc = new Document("usuario", usuario.getUsuario())
+        Document doc = new Document("username", usuario.getUsername())
                          .append("contraseña", usuario.getContraseña())
                          .append("nombre", usuario.getNombre())
                          .append("apellidos", usuario.getApellidos());
@@ -32,9 +32,9 @@ public class ControladorMongoDB {
         collection.insertOne(doc);
     }
 
-    public boolean ComprobarUsuario(String usuario, String contraseña) {
+    public boolean ComprobarUsuario(String username, String contraseña) {
         // Crear una consulta para buscar el usuario por su nombre de usuario y contraseña
-        Document query = new Document("usuario", usuario)
+        Document query = new Document("username", username)
                             .append("contraseña", contraseña);
 
         // Ejecutar la consulta en la colección de usuarios
