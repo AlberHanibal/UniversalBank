@@ -36,6 +36,17 @@ public class App extends Application {
         usuario = u;
     }
 
+    public static Parent cargarEscena(String fichero) {
+        FXMLLoader loader = new FXMLLoader(App.class.getResource(fichero));
+        Parent root = null;
+        try {
+            root = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return root;
+    }
+
     public static void main(String[] args) {
         launch();
     }

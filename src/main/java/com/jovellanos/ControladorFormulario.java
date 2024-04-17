@@ -1,6 +1,5 @@
 package com.jovellanos;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
 import javafx.fxml.FXML;
@@ -39,7 +38,7 @@ public class ControladorFormulario {
     private Label LabelConfirmarPass;
 
     @FXML
-    private void Continuar() throws IOException {
+    private void Continuar()  {
         String username = TextFieldUsuario.getText();
         String contraseña = TextFieldContraseña.getText();
         String confirmarPass = TextFieldConfirmarPass.getText();
