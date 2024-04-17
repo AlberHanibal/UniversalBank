@@ -1,39 +1,49 @@
 package com.jovellanos;
 
-import java.io.IOException;
-
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.SubScene;
-import javafx.scene.control.Button;
 
 public class ControladorPrincipal {
-    
-    @FXML
-    private Button boton1;
-    @FXML
-    private Button boton2;
+
     @FXML
     private SubScene sceneCentral;
 
-    public void initialize() throws IOException {
-        FXMLLoader loader = new FXMLLoader(App.class.getResource("SelectorCuenta.fxml"));
-        Parent root = loader.load();
-        sceneCentral.setRoot(root);
+    private void cambiarCentral(String fichero) {
+        sceneCentral.setRoot(App.cargarEscena(fichero));
+    }
+
+    public void initialize() {
+        cambiarCentral("ResumenCuenta.fxml");
     }
 
     @FXML
-    private void clickSiguiente1() throws IOException {
-        FXMLLoader loader = new FXMLLoader(App.class.getResource("Formulario.fxml"));
-        Parent root = loader.load();
-        sceneCentral.setRoot(root);
+    private void clickResumenCuenta() {
+        cambiarCentral("ResumenCuenta.fxml");
     }
+
     @FXML
-    private void clickSiguiente2() throws IOException {
-        FXMLLoader loader = new FXMLLoader(App.class.getResource("Login.fxml"));
-        Parent root = loader.load();
-        sceneCentral.setRoot(root);
+    private void clickMovimientos() {
+        cambiarCentral("Movimientos.fxml");
     }
-    
+
+    @FXML
+    private void clickTarjetas() {
+        cambiarCentral("Tarjetas.fxml");
+    }
+
+    @FXML
+    private void clickTransferencias() {
+        cambiarCentral("Transferencias.fxml");
+    }
+
+    @FXML
+    private void clickHipotecas() {
+        cambiarCentral("Hipotecas.fxml");
+    }
+
+    @FXML
+    private void clickPrestamos() {
+        cambiarCentral("Prestamos.fxml");
+    }
+
 }
