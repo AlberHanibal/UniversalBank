@@ -1,17 +1,17 @@
 package com.jovellanos;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 public class GastosPeriodicos {
     private Double cantidadTotal;
     private Double cantidadPagada;
-    private LocalDate fechaInicio;
-    private LocalDate fechaSiguientePago;
+    private Date fechaInicio;
+    private Date fechaSiguientePago;
     private int plazosTiempo; // numero de dias entre cada plazo
     private Double plazosDinero;
 
-    public GastosPeriodicos(Double cantidadTotal, Double cantidadPagada, LocalDate fechaInicio,
-            LocalDate fechaSiguientePago, int plazosTiempo, Double plazosDinero) {
+    public GastosPeriodicos(Double cantidadTotal, Double cantidadPagada, Date fechaInicio,
+    Date fechaSiguientePago, int plazosTiempo, Double plazosDinero) {
         this.cantidadTotal = cantidadTotal;
         this.cantidadPagada = cantidadPagada;
         this.fechaInicio = fechaInicio;
@@ -36,19 +36,19 @@ public class GastosPeriodicos {
         this.cantidadPagada = cantidadPagada;
     }
 
-    public LocalDate getFechaInicio() {
+    public Date getFechaInicio() {
         return fechaInicio;
     }
 
-    public void setFechaInicio(LocalDate fechaInicio) {
+    public void setFechaInicio(Date fechaInicio) {
         this.fechaInicio = fechaInicio;
     }
 
-    public LocalDate getFechaSiguientePago() {
+    public Date getFechaSiguientePago() {
         return fechaSiguientePago;
     }
 
-    public void setFechaSiguientePago(LocalDate fechaSiguientePago) {
+    public void setFechaSiguientePago(Date fechaSiguientePago) {
         this.fechaSiguientePago = fechaSiguientePago;
     }
 

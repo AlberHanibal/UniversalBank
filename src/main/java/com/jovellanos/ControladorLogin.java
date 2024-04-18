@@ -20,8 +20,6 @@ public class ControladorLogin {
 
     @FXML
     private void Continuar() {
-        
-
         String username = TextFieldUsuario.getText();
         String contraseña = TextFieldContraseña.getText();
 
@@ -29,6 +27,9 @@ public class ControladorLogin {
         Boolean existe = ControlMongo.ComprobarUsuario(username, contraseña);
 
         if (existe) {
+            Usuario usuario = ControlMongo.buscarUsuarioPorNombre(username);
+            App.setUsuario(usuario);
+
             App.getScene().setRoot(App.cargarEscena("SelectorCuenta.fxml"));
         } else {
             Alert alert = new Alert(AlertType.ERROR);

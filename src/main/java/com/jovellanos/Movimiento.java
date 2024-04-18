@@ -1,19 +1,18 @@
 package com.jovellanos;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 public class Movimiento {
     private Double cantidad;
     private String asunto;
-    private LocalDate fecha;
+    private Date fecha;
     private String tipo;
 
-    public Movimiento(Double cantidad, String asunto, String tipo) {
+    public Movimiento(Double cantidad, String asunto, Date fecha, String tipo) {
         this.cantidad = cantidad;
         this.asunto = asunto;
+        this.fecha = fecha;
         this.tipo = tipo;
-
-        fecha = LocalDate.now();
     }
 
     public Double getCantidad() {
@@ -32,11 +31,11 @@ public class Movimiento {
         this.asunto = asunto;
     }
 
-    public LocalDate getFecha() {
+    public Date getFecha() {
         return fecha;
     }
 
-    public void setFecha(LocalDate fecha) {
+    public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
 

@@ -1,15 +1,15 @@
 package com.jovellanos;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 public class Tarjeta {
     private int id;
     private Double limiteDiario;
     private String pin;
-    private LocalDate fechaCaducidad;
+    private Date fechaCaducidad;
     private boolean cancelada;
 
-    public Tarjeta(int id, Double limiteDiario, String pin, LocalDate fechaCaducidad) {
+    public Tarjeta(int id, Double limiteDiario, String pin, Date fechaCaducidad) {
         this.id = id;
         this.limiteDiario = limiteDiario;
         this.pin = pin;
@@ -40,11 +40,11 @@ public class Tarjeta {
         this.pin = pin;
     }
 
-    public LocalDate getFechaCaducidad() {
+    public Date getFechaCaducidad() {
         return fechaCaducidad;
     }
 
-    public void setFechaCaducidad(LocalDate fechaCaducidad) {
+    public void setFechaCaducidad(Date fechaCaducidad) {
         this.fechaCaducidad = fechaCaducidad;
     }
 
