@@ -57,4 +57,8 @@ public class Usuario {
     public void setApellidos(String apellidos) {
         this.apellidos = apellidos;
     }
+
+    public void agregarCuenta(Cuenta cuenta) {
+        listaCuentas.add(cuenta);
+    }
 }

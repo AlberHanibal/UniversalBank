@@ -5,6 +5,7 @@ import java.util.Date;
 
 import org.bson.Document;
 
+import static com.mongodb.client.model.Filters.eq;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
@@ -29,10 +30,27 @@ public class ControladorMongoDB {
         // Lógica para guardar un usuario en la base de datos
         Document doc = new Document("username", usuario.getUsername())
                          .append("contraseña", usuario.getContraseña())
+                         .append("listaCuentas", usuario.getListaCuentas())
                          .append("nombre", usuario.getNombre())
                          .append("apellidos", usuario.getApellidos());
                          
         collection.insertOne(doc);
+    }
+
+    public void guardarCuenta(String username, Cuenta cuenta) {
+        // Crear un documento BSON para la nueva cuenta
+        Document cuentaDoc = new Document("id", cuenta.getId())
+                                .append("balance", cuenta.getBalance())
+                                .append("listaTarjetas", cuenta.getListaTarjetas())
+                                .append("historialMovimientos", cuenta.getHistorialMovimientos())
+                                .append("listaGastos", cuenta.getListaGastos());
+
+        // Crear una actualizacion para agregar la cuenta a la lista de cuentas del usuario.
+        Document update = new Document("$push", new Document("listaCuentas", cuentaDoc));
+
+        // Actualizar el documento del usuario en la base de datos
+        collection.updateOne(eq("username", username), update);
+
     }
 
     public boolean ComprobarUsuario(String username, String contraseña) {
