@@ -15,7 +15,7 @@ public class ControladorSelectorCuenta {
     }
 
     @FXML
-    private void CrearUsuario() throws IOException {
+    private void CrearCuenta() throws IOException {
         generarCuenta();
     }
 
