@@ -12,6 +12,7 @@ public class App extends Application {
 
     private static Scene scene;
     private static Usuario usuario;
+    private static Cuenta cuenta;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -34,6 +35,14 @@ public class App extends Application {
 
     public static void setUsuario(Usuario u) {
         usuario = u;
+    }
+
+    public static Cuenta getCuenta() {
+        return cuenta;
+    }
+
+    public static void setCuenta(Cuenta c) {
+        cuenta = c;
     }
 
     public static Parent cargarEscena(String fichero) {

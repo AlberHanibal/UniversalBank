@@ -61,4 +61,8 @@ public class Usuario {
     public void agregarCuenta(Cuenta cuenta) {
         listaCuentas.add(cuenta);
     }
+
+    public int obtenerNumeroCuentas() {
+        return listaCuentas.size();
+    }
 }
