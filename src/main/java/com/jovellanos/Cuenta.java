@@ -9,6 +9,10 @@ public class Cuenta {
     private ArrayList<Movimiento> historialMovimientos;
     private ArrayList<GastosPeriodicos> listaGastos;
 
+    public Cuenta() {
+        
+    }
+
     public Cuenta(int id, Double balance, ArrayList<Tarjeta> listaTarjetas,
             ArrayList<Movimiento> historialMovimientos, ArrayList<GastosPeriodicos> listaGastos) {
         this.id = id;

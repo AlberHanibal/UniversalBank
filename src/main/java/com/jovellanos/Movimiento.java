@@ -8,6 +8,10 @@ public class Movimiento {
     private Date fecha;
     private String tipo;
 
+    public Movimiento() {
+
+    }
+
     public Movimiento(Double cantidad, String asunto, Date fecha, String tipo) {
         this.cantidad = cantidad;
         this.asunto = asunto;

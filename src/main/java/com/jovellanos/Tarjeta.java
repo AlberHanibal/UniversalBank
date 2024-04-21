@@ -9,6 +9,10 @@ public class Tarjeta {
     private Date fechaCaducidad;
     private boolean cancelada;
 
+    public Tarjeta() {
+
+    }
+
     public Tarjeta(int id, Double limiteDiario, String pin, Date fechaCaducidad) {
         this.id = id;
         this.limiteDiario = limiteDiario;

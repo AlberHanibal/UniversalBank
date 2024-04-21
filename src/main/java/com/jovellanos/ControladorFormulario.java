@@ -67,6 +67,18 @@ public class ControladorFormulario {
 
             return;
         }
+        ControladorMongoDB ControlMongo = new ControladorMongoDB();
+        Boolean existe = ControlMongo.ComprobarUsuario(username);
+
+        if (existe) {
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Usuario duplicado.");
+            alert.showAndWait();
+
+            return;
+        }
 
         // Se comprueba que las contraseñas coincidan
         if (!contraseña.equals(confirmarPass)) {
@@ -75,14 +87,13 @@ public class ControladorFormulario {
             alert.setHeaderText(null);
             alert.setContentText("Las contraseñas no coinciden.");
             alert.showAndWait();
-            
+
             return;
         }
-        
+
         ArrayList<Cuenta> lista = new ArrayList<Cuenta>();
         Usuario u = new Usuario(username, contraseña, lista, nombre, apellidos);
 
-        ControladorMongoDB ControlMongo = new ControladorMongoDB();
         ControlMongo.guardarUsuario(u);
 
         Stage stage = (Stage) TextFieldUsuario.getScene().getWindow(); // Cerrar la ventana una vez creado el usuario

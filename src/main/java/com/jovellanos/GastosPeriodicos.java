@@ -10,8 +10,12 @@ public class GastosPeriodicos {
     private int plazosTiempo; // numero de dias entre cada plazo
     private Double plazosDinero;
 
+    public GastosPeriodicos() {
+
+    }
+
     public GastosPeriodicos(Double cantidadTotal, Double cantidadPagada, Date fechaInicio,
-    Date fechaSiguientePago, int plazosTiempo, Double plazosDinero) {
+            Date fechaSiguientePago, int plazosTiempo, Double plazosDinero) {
         this.cantidadTotal = cantidadTotal;
         this.cantidadPagada = cantidadPagada;
         this.fechaInicio = fechaInicio;

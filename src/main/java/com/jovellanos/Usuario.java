@@ -9,6 +9,10 @@ public class Usuario {
     private String nombre;
     private String apellidos;
 
+    public Usuario() {
+
+    }
+
     public Usuario(String username, String contraseña, ArrayList<Cuenta> listaCuentas, String nombre,
             String apellidos) {
         this.username = username;
