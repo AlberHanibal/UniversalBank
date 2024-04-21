@@ -1,6 +1,5 @@
 package com.jovellanos;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.UUID;
 
@@ -28,12 +27,15 @@ public class ControladorSelectorCuenta implements Initializable {
     }
 
     @FXML
-    private void Continuar() throws IOException {
-       
+    private void Continuar() {
+        // tamaño de la ventana sin decidir
+        App.getScene().setRoot(App.cargarEscena("Principal.fxml"));
+        App.getScene().getWindow().setWidth(1500);
+        App.getScene().getWindow().setHeight(800);
     }
 
     @FXML
-    private void CrearCuenta() throws IOException {
+    private void CrearCuenta() {
         generarCuenta();
         actualizarEtiquetas();
     }
@@ -41,9 +43,9 @@ public class ControladorSelectorCuenta implements Initializable {
     private void actualizarEtiquetas() {
         ObservableList<Node> children = anchorPane.getChildren(); // Elimina todas las etiquetas menos la primera
         if (children.size() > 1) {
-            children.remove(1, children.size());                
+            children.remove(1, children.size());
         }
-    
+
         ArrayList<Cuenta> listaCuentas = usuario.getListaCuentas();
         int cont = 0;
 
@@ -59,7 +61,7 @@ public class ControladorSelectorCuenta implements Initializable {
         for (Cuenta cuenta : listaCuentas) {
             int id = cuenta.getId();
             Double balance = cuenta.getBalance();
-        
+
             Label label = new Label("ID:  " + id + "\nBalance: " + balance);
             label.setMinWidth(300);
             label.setMaxWidth(300);
@@ -95,7 +97,7 @@ public class ControladorSelectorCuenta implements Initializable {
 
         usuario.agregarCuenta(cuenta);
         ControlMongo.guardarCuenta(usuario.getUsername(), cuenta);
-        
+
         return cuenta;
     }
 
