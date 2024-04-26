@@ -21,9 +21,10 @@ public class ControladorLogin {
     @FXML
     private void Continuar() {
         String username = TextFieldUsuario.getText();
+        String contraseña = TextFieldContraseña.getText();
 
         ControladorMongoDB ControlMongo = new ControladorMongoDB();
-        Boolean existe = ControlMongo.ComprobarUsuario(username);
+        Boolean existe = ControlMongo.ComprobarUsuarioYContraseña(username, contraseña);
 
         if (existe) {
             Usuario usuario = ControlMongo.buscarUsuarioPorNombre(username);

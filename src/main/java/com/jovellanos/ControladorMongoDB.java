@@ -3,6 +3,7 @@ package com.jovellanos;
 import java.util.ArrayList;
 import org.bson.codecs.configuration.CodecRegistry;
 import org.bson.codecs.pojo.PojoCodecProvider;
+import static com.mongodb.client.model.Filters.and;
 import static com.mongodb.client.model.Filters.eq;
 import static org.bson.codecs.configuration.CodecRegistries.fromProviders;
 import static org.bson.codecs.configuration.CodecRegistries.fromRegistries;
@@ -44,6 +45,12 @@ public class ControladorMongoDB {
 
     public boolean ComprobarUsuario(String username) {
         Usuario usuario = buscarUsuarioPorNombre(username);
+        return usuario != null;
+    }
+
+    public boolean ComprobarUsuarioYContraseña(String username, String contraseña) {
+        Usuario usuario = collection.find(and(eq("username", username), eq("contraseña", contraseña))).first();
+
         return usuario != null;
     }
 
