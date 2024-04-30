@@ -36,7 +36,8 @@
                   <Font size="32.0" />
                </font>
             </Label>
-         </children></HBox>
+         </children>
+      </HBox>
    </top>
    <center>
       <SubScene fx:id="sceneCentral" height="572.0" width="1065.0" BorderPane.alignment="CENTER">
