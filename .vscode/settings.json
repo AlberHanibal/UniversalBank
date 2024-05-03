@@ -4,5 +4,7 @@
             "command": "clean javafx:run",
             "debug": false
         }
-    ]
+    ],
+    "css.lint.vendorPrefix": "ignore",
+    "css.lint.unknownVendorSpecificProperties": "error"
 }

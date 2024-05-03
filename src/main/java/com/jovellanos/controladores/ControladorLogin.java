@@ -1,6 +1,11 @@
-package com.jovellanos;
+package com.jovellanos.controladores;
 
 import java.io.IOException;
+
+import com.jovellanos.App;
+import com.jovellanos.ControladorMongoDB;
+import com.jovellanos.modelo.Usuario;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -29,7 +34,7 @@ public class ControladorLogin {
         if (existe) {
             Usuario usuario = ControlMongo.buscarUsuarioPorNombre(username);
             App.setUsuario(usuario);
-            App.getScene().setRoot(App.cargarEscena("SelectorCuenta.fxml"));
+            App.getScene().setRoot(App.cargarEscena("fxml/SelectorCuenta.fxml"));
             App.getScene().getWindow().setWidth(1200);
             App.getScene().getWindow().setHeight(800);
         } else {
@@ -45,7 +50,7 @@ public class ControladorLogin {
 
     @FXML
     private void CrearUsuario() throws IOException {
-        FXMLLoader loader = new FXMLLoader(App.class.getResource("Formulario.fxml"));
+        FXMLLoader loader = new FXMLLoader(App.class.getResource("fxml/Formulario.fxml"));
         Parent root = loader.load();
 
         Stage stage2 = new Stage();

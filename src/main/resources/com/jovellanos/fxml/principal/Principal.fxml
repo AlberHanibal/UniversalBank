@@ -9,14 +9,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="671.0" prefWidth="1306.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jovellanos.ControladorPrincipal">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="671.0" prefWidth="1306.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jovellanos.controladores.principal.ControladorPrincipal">
    <left>
       <VBox fx:id="menuIzq" prefHeight="671.0" prefWidth="236.0" BorderPane.alignment="CENTER">
          <children>
             <Button fx:id="botonResumen" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickResumenCuenta" prefHeight="65.0" prefWidth="230.0" text="Resumen Cuenta" />
             <Button fx:id="botonMovimientos" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickMovimientos" prefHeight="65.0" prefWidth="230.0" text="Movimientos" />
             <Button fx:id="botonTarjetas" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickTarjetas" prefHeight="65.0" prefWidth="230.0" text="Tarjetas" />
-            <Button fx:id="botonTransferencias" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickTransferencias" prefHeight="65.0" prefWidth="230.0" text="Transferencias" />
             <Button fx:id="botonHipotecas" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickHipotecas" prefHeight="65.0" prefWidth="230.0" text="Hipotecas" />
             <Button fx:id="botonPrestamos" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickPrestamos" prefHeight="65.0" prefWidth="230.0" text="Préstamos" />
          </children>
@@ -31,11 +30,7 @@
                </font>
             </Label>
             <Region prefHeight="100.0" prefWidth="844.0" />
-            <Label alignment="TOP_CENTER" prefHeight="100.0" prefWidth="228.0" text="Perfil" textAlignment="RIGHT">
-               <font>
-                  <Font size="32.0" />
-               </font>
-            </Label>
+            <Button fx:id="botonPerfil" mnemonicParsing="false" onAction="#clickPerfil" prefHeight="84.0" prefWidth="179.0" text="Perfil" />
          </children></HBox>
    </top>
    <center>

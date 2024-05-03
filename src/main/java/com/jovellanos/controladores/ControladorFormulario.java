@@ -1,6 +1,10 @@
-package com.jovellanos;
+package com.jovellanos.controladores;
 
 import java.util.ArrayList;
+
+import com.jovellanos.ControladorMongoDB;
+import com.jovellanos.modelo.Cuenta;
+import com.jovellanos.modelo.Usuario;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;

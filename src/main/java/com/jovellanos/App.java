@@ -8,6 +8,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+import com.jovellanos.modelo.Cuenta;
+import com.jovellanos.modelo.Usuario;
+
 public class App extends Application {
 
     private static Scene scene;
@@ -17,10 +20,11 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
-        FXMLLoader loader = new FXMLLoader(App.class.getResource("Login.fxml"));
+        FXMLLoader loader = new FXMLLoader(App.class.getResource("fxml/Login.fxml"));
         Parent root = loader.load();
 
         scene = new Scene(root, 600, 350);
+        scene.getStylesheets().add(App.class.getResource("css/estilos.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
     }

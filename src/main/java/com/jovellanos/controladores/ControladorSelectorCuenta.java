@@ -1,35 +1,35 @@
-package com.jovellanos;
+package com.jovellanos.controladores;
 
 import java.util.ArrayList;
 import java.util.UUID;
 
+import com.jovellanos.App;
+import com.jovellanos.ControladorMongoDB;
+import com.jovellanos.modelo.Cuenta;
+import com.jovellanos.modelo.Usuario;
+
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.Node;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-
-public class ControladorSelectorCuenta implements Initializable {
+public class ControladorSelectorCuenta {
     private Usuario usuario = App.getUsuario();
 
     @FXML
     private AnchorPane anchorPane;
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    public void initialize() {
         actualizarEtiquetas();
     }
 
     @FXML
     private void Continuar() {
         // tamaño de la ventana sin decidir
-        App.getScene().setRoot(App.cargarEscena("Principal.fxml"));
+        App.getScene().setRoot(App.cargarEscena("fxml/principal/Principal.fxml"));
         App.getScene().getWindow().setWidth(1500);
         App.getScene().getWindow().setHeight(800);
     }
@@ -81,7 +81,7 @@ public class ControladorSelectorCuenta implements Initializable {
                 @Override
                 public void handle(MouseEvent event) {
                     App.setCuenta(cuenta);
-                    App.getScene().setRoot(App.cargarEscena("Principal.fxml"));
+                    App.getScene().setRoot(App.cargarEscena("fxml/principal/Principal.fxml"));
                 }
             });
 
