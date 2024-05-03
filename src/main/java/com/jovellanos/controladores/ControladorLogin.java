@@ -1,19 +1,13 @@
 package com.jovellanos.controladores;
 
-import java.io.IOException;
-
 import com.jovellanos.App;
 import com.jovellanos.ControladorMongoDB;
 import com.jovellanos.modelo.Usuario;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
 public class ControladorLogin {
 
@@ -22,6 +16,13 @@ public class ControladorLogin {
 
     @FXML
     private TextField TextFieldContraseña;
+
+    public void initialize() {
+        if (App.getScene() != null) {
+            App.getScene().getWindow().setWidth(600);
+            App.getScene().getWindow().setHeight(400);
+        }
+    }
 
     @FXML
     private void Continuar() {
@@ -47,14 +48,7 @@ public class ControladorLogin {
     }
 
     @FXML
-    private void CrearUsuario() throws IOException {
-        FXMLLoader loader = new FXMLLoader(App.class.getResource("fxml/Formulario.fxml"));
-        Parent root = loader.load();
-
-        Stage stage2 = new Stage();
-        stage2.setScene(new Scene(root));
-        stage2.setTitle("Formulario creación de usuario");
-
-        stage2.show();
+    private void CrearUsuario() {
+        App.getScene().setRoot(App.cargarEscena("fxml/Formulario.fxml"));
     }
 }
