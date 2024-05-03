@@ -35,8 +35,6 @@ public class ControladorLogin {
             Usuario usuario = ControlMongo.buscarUsuarioPorNombre(username);
             App.setUsuario(usuario);
             App.getScene().setRoot(App.cargarEscena("fxml/SelectorCuenta.fxml"));
-            App.getScene().getWindow().setWidth(1200);
-            App.getScene().getWindow().setHeight(800);
         } else {
             Alert alert = new Alert(AlertType.ERROR);
             alert.setTitle("Error");

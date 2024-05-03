@@ -23,15 +23,14 @@ public class ControladorSelectorCuenta {
     private AnchorPane anchorPane;
 
     public void initialize() {
+        App.getScene().getWindow().setWidth(1200);
+        App.getScene().getWindow().setHeight(600);
         actualizarEtiquetas();
     }
 
     @FXML
     private void Continuar() {
-        // tamaño de la ventana sin decidir
         App.getScene().setRoot(App.cargarEscena("fxml/principal/Principal.fxml"));
-        App.getScene().getWindow().setWidth(1500);
-        App.getScene().getWindow().setHeight(800);
     }
 
     @FXML

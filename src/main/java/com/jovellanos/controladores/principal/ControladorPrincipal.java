@@ -15,6 +15,8 @@ public class ControladorPrincipal {
     }
 
     public void initialize() {
+        App.getScene().getWindow().setWidth(1500);
+        App.getScene().getWindow().setHeight(850);
         cambiarCentral("fxml/principal/ResumenCuenta.fxml");
     }
 
