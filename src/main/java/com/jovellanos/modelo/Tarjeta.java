@@ -1,4 +1,4 @@
-package com.jovellanos;
+package com.jovellanos.modelo;
 
 import java.time.LocalDate;
 

@@ -1,6 +1,11 @@
-package com.jovellanos;
+package com.jovellanos.controladores;
 
 import java.util.ArrayList;
+
+import com.jovellanos.App;
+import com.jovellanos.ControladorMongoDB;
+import com.jovellanos.modelo.Cuenta;
+import com.jovellanos.modelo.Usuario;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -9,7 +14,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
-import javafx.stage.Stage;
 
 public class ControladorFormulario {
 
@@ -36,6 +40,11 @@ public class ControladorFormulario {
 
     @FXML
     private Label LabelConfirmarPass;
+
+    public void initialize() {
+        App.getScene().getWindow().setWidth(600);
+        App.getScene().getWindow().setHeight(600);
+    }
 
     @FXML
     private void Continuar() {
@@ -96,7 +105,6 @@ public class ControladorFormulario {
 
         ControlMongo.guardarUsuario(u);
 
-        Stage stage = (Stage) TextFieldUsuario.getScene().getWindow(); // Cerrar la ventana una vez creado el usuario
-        stage.close();
+        App.getScene().setRoot(App.cargarEscena("fxml/Login.fxml"));
     }
 }
