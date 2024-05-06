@@ -1,6 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.Label?>
 
-
-<Label text="en resumen de cuenta" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jovellanos.controladores.principal.ControladorResumenCuenta"/>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1260.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jovellanos.controladores.principal.ControladorResumenCuenta">
+   <children>
+      <Pane fx:id="pnlCuentas" layoutX="87.0" layoutY="14.0" prefHeight="161.0" prefWidth="355.0" styleClass="Etiquetas">
+         <children>
+            <Label fx:id="lblID" layoutX="14.0" layoutY="14.0" prefHeight="35.0" prefWidth="325.0" text="ID: 000-000">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblBalance" layoutX="6.0" layoutY="87.0" prefHeight="70.0" prefWidth="344.0" text="Balance: 0 €">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="pnlTarjetas" layoutX="597.0" layoutY="23.0" prefHeight="161.0" prefWidth="355.0" styleClass="Etiquetas" />
+      <TableView fx:id="tblMovimientos" layoutX="40.0" layoutY="213.0" prefHeight="301.0" prefWidth="568.0">
+        <columns>
+          <TableColumn fx:id="colCantidad" prefWidth="110.0" text="Cantidad" />
+            <TableColumn fx:id="colAsunto" prefWidth="190.0" text="Asunto" />
+            <TableColumn fx:id="colFecha" minWidth="0.0" prefWidth="153.0" text="Fecha" />
+            <TableColumn fx:id="colTipo" prefWidth="114.0" text="Tipo" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnSiguienteTarjeta" layoutX="964.0" layoutY="81.0" mnemonicParsing="false" onAction="#TarjetaSiguiente" styleClass="Flechas">
+         <graphic>
+            <ImageView fx:id="imgSiguienteTarjeta" fitHeight="38.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../imagenes/FlechDer.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="btnAnteriorTarjeta" layoutX="543.0" layoutY="80.0" mnemonicParsing="false" onAction="#TarjetaAnterior" styleClass="Flechas">
+         <graphic>
+            <ImageView fx:id="imgAnteriorTarjeta" fitHeight="38.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../imagenes/FlechIzq.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="btnAnteriorCuenta" layoutX="33.0" layoutY="80.0" mnemonicParsing="false" onAction="#CuentaAnterior" styleClass="Flechas">
+         <graphic>
+            <ImageView fx:id="imgAnteriorCuenta" fitHeight="38.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../imagenes/FlechIzq.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="btnSiguienteCuenta" layoutX="456.0" layoutY="81.0" mnemonicParsing="false" onAction="#CuentaSiguiente" styleClass="Flechas">
+         <graphic>
+            <ImageView fx:id="imgSiguienteCuenta" fitHeight="38.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../imagenes/FlechDer.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>
