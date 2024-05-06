@@ -1,3 +1,20 @@
 .button {
     -fx-font-family: monospace;
 }
+
+.fondo {
+    -fx-background-color: #c0fdfb56;
+}
+
+.card {
+    
+    -fx-background-color: #FCFFFD;
+    -fx-background-radius: 30px;
+
+    -fx-border-radius: 50px;
+}
+
+.inputs {
+
+    -fx-background-radius: 60px;
+}
