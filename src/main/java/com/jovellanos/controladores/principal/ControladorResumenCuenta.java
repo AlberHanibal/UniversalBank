@@ -39,6 +39,9 @@ public class ControladorResumenCuenta {
 
     @FXML 
     private Label lblIDTarjeta;
+
+    @FXML 
+    private Label lblTipo;
     
     @FXML 
     private Label lblNumero;
@@ -233,6 +236,7 @@ public class ControladorResumenCuenta {
         if (cuenta.getListaTarjetas().isEmpty()) {
             // Si no hay tarjetas, mostrar un mensaje en las etiquetas
             lblIDTarjeta.setText("Sin tarjetas");
+            lblTipo.setText("");
             lblNumero.setText("");
             lblCVV.setText("");
             lblLimite.setText("");
@@ -241,6 +245,7 @@ public class ControladorResumenCuenta {
         } else {
             // Si hay tarjetas, mostrar los detalles de la tarjeta actual
             lblIDTarjeta.setText(String.valueOf("ID: " + tarjeta.getId()));
+            lblTipo.setText(String.valueOf("Tipo: " + tarjeta.getTipo()));
             lblNumero.setText(String.valueOf("Numero: " + tarjeta.getNumeroTarjeta()));
             lblCVV.setText(String.valueOf("Codigo CVV: " + tarjeta.getCVV()));
             lblLimite.setText((String.valueOf("Limite Diario: " + tarjeta.getLimiteDiario())));
@@ -318,30 +323,35 @@ public class ControladorResumenCuenta {
 
     private static ArrayList<Tarjeta> crearTarjetas() { // Codigo temporal para generar Tarjetas -------------------------------------------------
         ArrayList<Tarjeta> listaTarjetas = new ArrayList<>();
-
+    
         Random random = new Random();
         int num = random.nextInt(5);
-
+    
+        // Array de tipos de tarjetas disponibles
+        String[] tiposTarjeta = {"Crédito", "Débito", "Prepago", "Viaje", "Recompensas", "Corporativa"};
+    
         for (int i = 0; i < num; i++) {
             int id = i + random.nextInt(1000000000);
+
+            String tipo = tiposTarjeta[random.nextInt(tiposTarjeta.length)];
+
             String NumeroTarjeta = generateCreditCardNumber();
 
             String CVV = String.format("%03d", random.nextInt(1000));
 
-            double limiteDiario = random.nextDouble() * 2000; // Genera un límite diario aleatorio
-            limiteDiario = Math.round(limiteDiario * 100.0) / 100.0; // Redondea a dos decimales
+            double limiteDiario = random.nextDouble() * 2000;
+            limiteDiario = Math.round(limiteDiario * 100.0) / 100.0;
 
-            String pin = generateRandomPin(); // Genera un PIN aleatorio
+            String pin = generateRandomPin();
 
-            // Genera una fecha de caducidad aleatoria (entre 1 y 5 años desde la fecha actual)
             Calendar cal = Calendar.getInstance();
-            cal.add(Calendar.YEAR, random.nextInt(5) + 1);
+            cal.add(Calendar.YEAR, random.nextInt(5) + 1); // Fecha de caducidad aleatoria, entre 1 y 5 años desde la fecha actual
             Date fechaCaducidad = cal.getTime();
-
-            Tarjeta tarjeta = new Tarjeta(id, NumeroTarjeta, CVV, limiteDiario, pin, fechaCaducidad);
+    
+            Tarjeta tarjeta = new Tarjeta(id, tipo, NumeroTarjeta, CVV, limiteDiario, pin, fechaCaducidad);
             listaTarjetas.add(tarjeta);
         }
-
+    
         return listaTarjetas;
     }
 

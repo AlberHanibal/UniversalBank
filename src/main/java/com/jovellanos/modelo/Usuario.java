@@ -69,4 +69,13 @@ public class Usuario {
     public int obtenerNumeroCuentas() {
         return listaCuentas.size();
     }
+
+    public void actualizarCuenta(Cuenta cuentaActualizada) {
+        for (int i = 0; i < listaCuentas.size(); i++) {
+            if (listaCuentas.get(i).getId() == cuentaActualizada.getId()) {
+                listaCuentas.set(i, cuentaActualizada);
+                return;
+            }
+        }
+    }
 }
