@@ -4,6 +4,8 @@ import java.util.Date;
 
 public class Tarjeta {
     private int id;
+    private String NumeroTarjeta;
+    private String CVV;
     private Double limiteDiario;
     private String pin;
     private Date fechaCaducidad;
@@ -13,11 +15,14 @@ public class Tarjeta {
 
     }
 
-    public Tarjeta(int id, Double limiteDiario, String pin, Date fechaCaducidad) {
+    public Tarjeta(int id, String NumeroTarjeta, String CVV, Double limiteDiario, String pin, Date fechaCaducidad) {
         this.id = id;
+        this.NumeroTarjeta = NumeroTarjeta;
+        this.CVV = CVV;
         this.limiteDiario = limiteDiario;
         this.pin = pin;
         this.fechaCaducidad = fechaCaducidad;
+        this.cancelada = false;
     }
 
     public int getId() {
@@ -26,6 +31,22 @@ public class Tarjeta {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getNumeroTarjeta() {
+        return NumeroTarjeta;
+    }
+
+    public void setNumeroTarjeta(String NumeroTarjeta) {
+        this.NumeroTarjeta = NumeroTarjeta;
+    }
+
+    public String getCVV() {
+        return CVV;
+    }
+
+    public void setCVV(String CVV) {
+        this.CVV = CVV;
     }
 
     public Double getLimiteDiario() {

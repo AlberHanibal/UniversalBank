@@ -23,7 +23,39 @@
             </Label>
          </children>
       </Pane>
-      <Pane fx:id="pnlTarjetas" layoutX="597.0" layoutY="23.0" prefHeight="161.0" prefWidth="355.0" styleClass="Etiquetas" />
+      <Pane fx:id="pnlTarjetas" layoutX="597.0" layoutY="23.0" prefHeight="161.0" prefWidth="355.0" styleClass="Etiquetas">
+         <children>
+            <Label fx:id="lblIDTarjeta" layoutX="15.0" layoutY="8.0" prefHeight="35.0" prefWidth="325.0" text="ID: 000-000">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblNumero" layoutX="15.0" layoutY="43.0" prefHeight="20.0" prefWidth="325.0" text="Numero: ">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblCVV" layoutX="15.0" layoutY="63.0" prefHeight="20.0" prefWidth="325.0" text="Codigo CVV: ">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblLimite" layoutX="15.0" layoutY="85.0" prefHeight="20.0" prefWidth="325.0" text="Limite Diario: ">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblPin" layoutX="14.0" layoutY="105.0" prefHeight="20.0" prefWidth="308.0" text="Codigo Pin: ">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblCaducidad" layoutX="14.0" layoutY="127.0" prefHeight="20.0" prefWidth="308.0" text="Caduca el: ">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children></Pane>
       <TableView fx:id="tblMovimientos" layoutX="40.0" layoutY="213.0" prefHeight="301.0" prefWidth="568.0">
         <columns>
           <TableColumn fx:id="colCantidad" prefWidth="110.0" text="Cantidad" />
