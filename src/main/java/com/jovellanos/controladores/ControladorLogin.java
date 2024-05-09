@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 
 public class ControladorLogin {
 
@@ -22,6 +23,18 @@ public class ControladorLogin {
             App.getScene().getWindow().setWidth(600);
             App.getScene().getWindow().setHeight(400);
         }
+
+        TextFieldUsuario.setOnKeyPressed(event -> {
+            if (event.getCode() == KeyCode.ENTER) {
+                Continuar();
+            }
+        });
+
+        TextFieldContraseña.setOnKeyPressed(event -> {
+            if (event.getCode() == KeyCode.ENTER) {
+                Continuar();
+            }
+        });
     }
 
     @FXML

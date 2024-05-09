@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Label?>
 
-
-<Label text="en movimientos" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jovellanos.controladores.principal.ControladorMovimientos" />
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1260.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jovellanos.controladores.principal.ControladorMovimientos">
+   <children>
+      <TableView fx:id="tblMovimientos" layoutX="67.0" layoutY="60.0" prefHeight="333.0" prefWidth="634.0">
+         <columns>
+            <TableColumn fx:id="colTipo" prefWidth="114.0" text="Tipo" />
+            <TableColumn fx:id="colAsunto" prefWidth="258.0" text="Asunto" />
+            <TableColumn fx:id="colFecha" minWidth="0.0" prefWidth="153.0" text="Fecha" />
+            <TableColumn fx:id="colCantidad" prefWidth="108.0" text="Cantidad" />
+         </columns>
+      </TableView>
+      <Button alignment="CENTER" layoutX="275.0" layoutY="476.0" minHeight="39.0" minWidth="110.0" mnemonicParsing="false" onAction="#NuevoMovimiento" text="Nuevo Movimiento">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Label layoutX="352.0" layoutY="416.0" prefHeight="19.0" prefWidth="86.0" text="Tipo de Movimiento" />
+      <TextField fx:id="txtTipo" layoutX="447.0" layoutY="413.0" />
+      <TextField fx:id="txtAsunto" layoutX="447.0" layoutY="444.0" />
+      <Label layoutX="352.0" layoutY="447.0" prefHeight="19.0" prefWidth="86.0" text="Asunto:" />
+      <Label layoutX="67.0" layoutY="444.0" prefHeight="19.0" prefWidth="38.0" text="Fecha:" />
+      <DatePicker fx:id="dtpFecha" layoutX="134.0" layoutY="445.0" />
+      <Label layoutX="67.0" layoutY="416.0" prefHeight="19.0" prefWidth="86.0" text="Cantidad:" />
+      <TextField fx:id="txtCantidad" layoutX="134.0" layoutY="413.0" />
+   </children>
+</AnchorPane>
