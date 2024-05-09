@@ -24,14 +24,14 @@
          <children>
             <Pane layoutX="114.0" layoutY="27.0" prefHeight="243.0" prefWidth="377.0" styleClass="card">
                <children>
-                  <PasswordField fx:id="TextFieldContraseña" layoutX="53.0" layoutY="125.0" prefHeight="25.0" prefWidth="267.0" styleClass="inputs" />
-                  <Label layoutX="53.0" layoutY="105.0" text="Contraseña">
+                  <Label layoutX="53.0" layoutY="33.0" text="Usuario">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
                   <TextField fx:id="TextFieldUsuario" layoutX="53.0" layoutY="53.0" prefHeight="25.0" prefWidth="267.0" styleClass="inputs" />
-                  <Label layoutX="53.0" layoutY="33.0" text="Usuario">
+                  <PasswordField fx:id="TextFieldContraseña" layoutX="53.0" layoutY="125.0" prefHeight="25.0" prefWidth="267.0" styleClass="inputs" />
+                  <Label layoutX="53.0" layoutY="105.0" text="Contraseña">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>

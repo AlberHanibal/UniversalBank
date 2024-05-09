@@ -1,20 +1,25 @@
+.root {
+    -card: #e6fce1ec;
+    -fondo: #93d6b93e;
+    -sombra: #066b54;
+}
+
 .button {
     -fx-font-family: monospace;
 }
 
 .fondo {
-    -fx-background-color: #c0fdfb56;
+    -fx-background-color: -fondo;
 }
 
 .card {
-    
-    -fx-background-color: #FCFFFD;
+    -fx-background-color: -card;
     -fx-background-radius: 30px;
-
     -fx-border-radius: 50px;
+
+    -fx-effect: dropshadow(three-pass-box, -sombra, 10, 0, 2, -1);
 }
 
 .inputs {
-
     -fx-background-radius: 60px;
 }

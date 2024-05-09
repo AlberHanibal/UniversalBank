@@ -6,5 +6,5 @@
         }
     ],
     "css.lint.vendorPrefix": "ignore",
-    "css.lint.unknownVendorSpecificProperties": "error"
+    "css.lint.unknownVendorSpecificProperties": "ignore"
 }
