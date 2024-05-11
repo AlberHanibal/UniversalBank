@@ -66,7 +66,12 @@
                         <Font name="System Bold Italic" size="14.0" />
                      </font>
                   </Label>
-                  <Button alignment="CENTER" layoutX="115.0" layoutY="364.0" minHeight="39.0" minWidth="110.0" mnemonicParsing="false" onAction="#Continuar" text="Crear Usuario">
+                  <Button alignment="CENTER" layoutX="70.0" layoutY="364.0" minHeight="39.0" minWidth="110.0" mnemonicParsing="false" onAction="#Continuar" text="Crear Usuario">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button alignment="CENTER" layoutX="223.0" layoutY="364.0" minHeight="39.0" minWidth="110.0" mnemonicParsing="false" onAction="#Cancelar" text="Cancelar">
                      <font>
                         <Font size="18.0" />
                      </font>

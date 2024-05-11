@@ -36,7 +36,7 @@
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <HBox alignment="BASELINE_CENTER" layoutX="33.0" layoutY="180.0">
+                  <HBox alignment="BASELINE_CENTER" layoutX="56.0" layoutY="180.0">
                      <children>
                         <Button alignment="CENTER" minHeight="39.0" minWidth="110.0" mnemonicParsing="false" onAction="#CrearUsuario" text="Crear Usuario">
                            <font>

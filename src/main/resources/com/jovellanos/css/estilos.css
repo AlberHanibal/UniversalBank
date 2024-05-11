@@ -4,10 +4,6 @@
     -sombra: #066b54;
 }
 
-.button {
-    -fx-font-family: monospace;
-}
-
 .fondo {
     -fx-background-color: -fondo;
 }
