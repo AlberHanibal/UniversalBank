@@ -33,3 +33,8 @@
 .inputs {
     -fx-background-radius: 60px;
 }
+
+.cuenta {
+    -fx-alignment: CENTER-LEFT;
+    -fx-padding: 10px;
+}

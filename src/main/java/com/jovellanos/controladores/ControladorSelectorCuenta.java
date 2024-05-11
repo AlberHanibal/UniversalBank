@@ -24,7 +24,7 @@ public class ControladorSelectorCuenta {
 
     public void initialize() {
         App.getScene().getWindow().setWidth(1200);
-        App.getScene().getWindow().setHeight(600);
+        App.getScene().getWindow().setHeight(750);
         actualizarEtiquetas();
     }
 
@@ -64,7 +64,8 @@ public class ControladorSelectorCuenta {
             Label label = new Label("ID:  " + id + "\nBalance: " + balance);
             label.setMinWidth(300);
             label.setMaxWidth(300);
-            label.setStyle("-fx-alignment: CENTER-LEFT; " + "-fx-background-color: white; " + "-fx-padding: 10px;");
+            //label.setStyle("-fx-alignment: CENTER-LEFT; " + "-fx-background-color: white; " + "-fx-padding: 10px;");
+            label.getStyleClass().addAll("card", "cuenta");
 
             anchorPane.getChildren().add(label);
 
