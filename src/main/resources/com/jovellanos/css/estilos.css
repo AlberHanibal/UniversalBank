@@ -1,7 +1,3 @@
-/*.button {
-    -fx-font-family: monospace;
-} ¿Que se supone que es esto, los botones del login se vuelven locos si lo dejo activado?*/
-
 .Etiquetas {
     -fx-border-width: 2px;
     -fx-border-color: black;
@@ -14,4 +10,26 @@
 .Flechas {
     -fx-background-color: transparent;
     -fx-padding: 0;
+}
+
+.root {
+    -card: #e6fce1ec;
+    -fondo: #93d6b93e;
+    -sombra: #066b54;
+}
+
+.fondo {
+    -fx-background-color: -fondo;
+}
+
+.card {
+    -fx-background-color: -card;
+    -fx-background-radius: 30px;
+    -fx-border-radius: 50px;
+
+    -fx-effect: dropshadow(three-pass-box, -sombra, 10, 0, 2, -1);
+}
+
+.inputs {
+    -fx-background-radius: 60px;
 }

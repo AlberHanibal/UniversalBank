@@ -107,4 +107,9 @@ public class ControladorFormulario {
 
         App.getScene().setRoot(App.cargarEscena("fxml/Login.fxml"));
     }
+
+    @FXML
+    private void Cancelar() {
+        App.getScene().setRoot(App.cargarEscena("fxml/Login.fxml"));
+    }
 }

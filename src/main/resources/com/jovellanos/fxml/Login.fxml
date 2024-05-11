@@ -13,9 +13,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jovellanos.controladores.ControladorLogin">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="600.0" styleClass="fondo" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jovellanos.controladores.ControladorLogin">
    <top>
       <Label text="Universal Bank" BorderPane.alignment="CENTER">
          <font>
@@ -24,40 +25,42 @@
       </Label>
    </top>
    <center>
-      <AnchorPane prefHeight="250.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="250.0" prefWidth="551.0" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="167.0" layoutY="78.0" text="Usuario">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Label>
-            <TextField fx:id="TextFieldUsuario" layoutX="167.0" layoutY="95.0" prefHeight="25.0" prefWidth="267.0" />
-            <Label layoutX="167.0" layoutY="145.0" text="Contraseña">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
-            </Label>
-            <PasswordField fx:id="TextFieldContraseña" layoutX="168.0" layoutY="165.0" prefHeight="25.0" prefWidth="267.0" />
+            <Pane layoutX="114.0" layoutY="27.0" prefHeight="243.0" prefWidth="377.0" styleClass="card">
+               <children>
+                  <Label layoutX="53.0" layoutY="33.0" text="Usuario">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="TextFieldUsuario" layoutX="53.0" layoutY="53.0" prefHeight="25.0" prefWidth="267.0" styleClass="inputs" />
+                  <PasswordField fx:id="TextFieldContraseña" layoutX="53.0" layoutY="125.0" prefHeight="25.0" prefWidth="267.0" styleClass="inputs" />
+                  <Label layoutX="53.0" layoutY="105.0" text="Contraseña">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="BASELINE_CENTER" layoutX="56.0" layoutY="180.0">
+                     <children>
+                        <Button alignment="CENTER" minHeight="39.0" minWidth="110.0" mnemonicParsing="false" onAction="#CrearUsuario" text="Crear Usuario">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets bottom="10.0" right="20.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button alignment="CENTER" layoutX="250.0" layoutY="10.0" minHeight="39.0" minWidth="110.0" mnemonicParsing="false" onAction="#Continuar" text="Continuar">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </Pane>
          </children>
       </AnchorPane>
    </center>
-   <bottom>
-      <HBox alignment="BASELINE_CENTER" BorderPane.alignment="CENTER">
-         <children>
-            <Button alignment="CENTER" minHeight="39.0" minWidth="110.0" mnemonicParsing="false" onAction="#CrearUsuario" text="Crear Usuario">
-               <font>
-                  <Font size="18.0" />
-               </font>
-               <HBox.margin>
-                  <Insets bottom="10.0" right="20.0" />
-               </HBox.margin>
-            </Button>
-            <Button alignment="CENTER" layoutX="250.0" layoutY="10.0" minHeight="39.0" minWidth="110.0" mnemonicParsing="false" onAction="#Continuar" text="Continuar">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Button>
-         </children>
-      </HBox>
-   </bottom>
 </BorderPane>
