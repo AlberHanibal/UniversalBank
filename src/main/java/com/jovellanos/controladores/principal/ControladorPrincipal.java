@@ -13,10 +13,27 @@ import com.jovellanos.modelo.Usuario;
 
 import javafx.fxml.FXML;
 import javafx.scene.SubScene;
+import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class ControladorPrincipal {
     private Usuario usuario = App.getUsuario();
+    private int iconWidth = 30;
+    private int iconHeight = 30;
 
+    @FXML
+    private Button botonResumen;
+
+    @FXML
+    private Button botonMovimientos;
+
+    @FXML
+    private Button botonTarjetas;
+
+    @FXML
+    private Button botonHipotecas;
+    
     @FXML
     private SubScene sceneCentral;
 
@@ -25,8 +42,14 @@ public class ControladorPrincipal {
     }
 
     public void initialize() {
-        App.getScene().getWindow().setWidth(1500);
-        App.getScene().getWindow().setHeight(850);
+        App.getScene().getWindow().setWidth(1300);
+        App.getScene().getWindow().setHeight(750);
+
+        // Iconos menú
+        botonResumen.setGraphic(new ImageView(new Image(App.class.getResource("assets/icons/dashboard.png").toExternalForm(), iconWidth, iconHeight, true, true)));
+        botonMovimientos.setGraphic(new ImageView(new Image(App.class.getResource("assets/icons/arrows.png").toExternalForm(), iconWidth, iconHeight, true, true)));
+        botonTarjetas.setGraphic(new ImageView(new Image(App.class.getResource("assets/icons/credit-card.png").toExternalForm(), iconWidth, iconHeight, true, true)));
+        botonHipotecas.setGraphic(new ImageView(new Image(App.class.getResource("assets/icons/get-money.png").toExternalForm(), iconWidth, iconHeight, true, true)));
 
         for (Cuenta c : usuario.getListaCuentas()) {
             if (c.getHistorialMovimientos().isEmpty()) {

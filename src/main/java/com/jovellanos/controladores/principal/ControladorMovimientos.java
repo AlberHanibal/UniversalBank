@@ -50,8 +50,6 @@ public class ControladorMovimientos {
     private TableColumn<Movimiento, String> colTipo;
 
     public void initialize() {
-        App.getScene().getWindow().setWidth(1260);
-        App.getScene().getWindow().setHeight(700);
 
         colCantidad.setCellValueFactory(new PropertyValueFactory<>("cantidad"));
         colAsunto.setCellValueFactory(new PropertyValueFactory<>("asunto"));

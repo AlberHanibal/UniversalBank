@@ -92,8 +92,6 @@ public class ControladorResumenCuenta {
     private ImageView imgSiguienteCuenta;
 
     public void initialize() {
-        App.getScene().getWindow().setWidth(1260);
-        App.getScene().getWindow().setHeight(700);
 
         tarjeta = RastrearTarjeta("Primera");
 
