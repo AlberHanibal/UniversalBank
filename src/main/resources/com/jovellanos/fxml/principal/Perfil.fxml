@@ -1,6 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Label?>
 
-
-<Label text="en perfil" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jovellanos.controladores.principal.ControladorPerfil" />
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1260.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jovellanos.controladores.principal.ControladorPerfil">
+   <children>
+      <Button alignment="CENTER" layoutX="444.0" layoutY="167.0" minHeight="39.0" minWidth="110.0" mnemonicParsing="false" onAction="#ModificarPerfil" text="Modificar Perfil">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Pane layoutX="14.0" layoutY="14.0" prefHeight="192.0" prefWidth="430.0">
+         <children>
+            <Label text="Datos de la cuenta">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="31.0" prefHeight="35.0" prefWidth="245.0" text="Usuario:">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblUsuario" layoutX="127.0" layoutY="31.0" prefHeight="35.0" prefWidth="245.0">
+               <font>
+                  <Font name="System Italic" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="83.0" prefHeight="35.0" prefWidth="97.0" text="Nombre:">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblNombre" layoutX="127.0" layoutY="83.0" prefHeight="35.0" prefWidth="245.0">
+               <font>
+                  <Font name="System Italic" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="140.0" prefHeight="35.0" prefWidth="113.0" text="Apellidos:">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblApellidos" layoutX="127.0" layoutY="140.0" prefHeight="35.0" prefWidth="245.0">
+               <font>
+                  <Font name="System Italic" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="14.0" layoutY="258.0" prefHeight="192.0" prefWidth="612.0">
+         <children>
+            <Label text="Datos Personales">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="31.0" prefHeight="35.0" prefWidth="113.0" text="Dirección:">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblDireccion" layoutX="137.0" layoutY="31.0" prefHeight="35.0" prefWidth="159.0">
+               <font>
+                  <Font name="System Italic" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="332.0" layoutY="31.0" prefHeight="35.0" prefWidth="113.0" text="Telefono: ">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblTelefono" layoutX="455.0" layoutY="31.0" prefHeight="35.0" prefWidth="134.0">
+               <font>
+                  <Font name="System Italic" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="76.0" prefHeight="35.0" prefWidth="245.0" text="Fecha de Nacimiento: ">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblNacimiento" layoutX="271.0" layoutY="76.0" prefHeight="35.0" prefWidth="323.0">
+               <font>
+                  <Font name="System Italic" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="15.0" layoutY="120.0" prefHeight="35.0" prefWidth="245.0" text="Correo Electronico:">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblCorreo" layoutX="271.0" layoutY="120.0" prefHeight="35.0" prefWidth="323.0">
+               <font>
+                  <Font name="System Italic" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

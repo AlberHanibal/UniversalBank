@@ -171,6 +171,9 @@ public class ControladorTarjetas {
 
         ControladorMongoDB controlMongo = new ControladorMongoDB();
         controlMongo.ActualizarUsuario(usuario);
+
+        App.setCuenta(cuenta);
+        App.setUsuario(usuario);
     }
 
     @FXML
