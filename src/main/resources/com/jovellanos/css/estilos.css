@@ -13,9 +13,12 @@
 }
 
 .root {
+    -primario: #358f80;
     -card: #e6fce1ec;
     -fondo: #93d6b93e;
     -sombra: #066b54;
+    -tabla1: #1dbbdd44;
+    -tabla2: #93f9b944;
 }
 
 .fondo {
@@ -39,6 +42,81 @@
     -fx-padding: 10px;
 }
 
-.menu {
-    
+/* Tablas https://edencoding.com/style-tableview-javafx/ */
+
+.table-view {
+    -fx-background-color: transparent;
+}
+
+.table-view .corner {
+    -fx-background-color: transparent;
+}
+
+/* Headers */
+
+.table-view .column-header-background .filler {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: linear-gradient(to bottom, -tabla1, -tabla2);
+    -fx-background-radius: 7px 7px 0px 0px;
+    -fx-background-insets: 0 0 0 0;
+    -fx-padding: 0 0 5px 0;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+
+/* Celdas y Líneas */
+
+.table-view .table-cell {
+    -fx-border-color: transparent;
+    -fx-padding: 2 0 2 10px;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: -table2;
+    -fx-text-background-color: purple;
+}
+.table-row-cell:filled:selected {
+    -fx-background-color: -primario;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: -tabla2;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em;
+}
+
+.table-row-cell:even {
+    -fx-background-color: -tabla1;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em;
+}
+
+/* ScrollBars */
+
+.table-view .virtual-flow .scroll-bar:vertical,
+.table-view .virtual-flow .scroll-bar:vertical .track,
+.table-view .virtual-flow .scroll-bar:vertical .track-background,
+.table-view .virtual-flow .scroll-bar:horizontal,
+.table-view .virtual-flow .scroll-bar:horizontal .track,
+.table-view .virtual-flow .scroll-bar:horizontal .track-background {
+    -fx-background-color: transparent;
+}
+
+.table-view .virtual-flow .scroll-bar .increment-button,
+.table-view .virtual-flow .scroll-bar .decrement-button {
+    -fx-opacity: 0;
+    -fx-padding: 2;
+}
+
+.table-view .virtual-flow .scroll-bar:vertical .thumb {
+    -fx-background-color: linear-gradient(to bottom, -tabla1, -tabla2);
+}
+
+.table-view .virtual-flow .scroll-bar:horizontal .thumb {
+    -fx-background-color: linear-gradient(to right, -tabla1, -tabla2);
 }
