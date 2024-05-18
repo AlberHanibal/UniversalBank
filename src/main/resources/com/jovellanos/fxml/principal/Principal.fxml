@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.SubScene?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -14,15 +10,30 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="671.0" prefWidth="1306.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jovellanos.controladores.principal.ControladorPrincipal">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="671.0" prefWidth="1266.0" styleClass="fondo" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jovellanos.controladores.principal.ControladorPrincipal">
    <left>
-      <VBox fx:id="menuIzq" prefHeight="700.0" prefWidth="240.0" BorderPane.alignment="CENTER">
+      <VBox fx:id="menuIzq" prefHeight="571.0" prefWidth="211.0" styleClass="menu" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="botonResumen" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickResumenCuenta" prefHeight="65.0" prefWidth="230.0" text="Resumen Cuenta" />
-            <Button fx:id="botonMovimientos" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickMovimientos" prefHeight="65.0" prefWidth="230.0" text="Movimientos" />
-            <Button fx:id="botonTarjetas" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickTarjetas" prefHeight="65.0" prefWidth="230.0" text="Tarjetas" />
-            <Button fx:id="botonHipotecas" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickHipotecas" prefHeight="65.0" prefWidth="230.0" text="Hipotecas" />
-            <Button fx:id="botonPrestamos" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickPrestamos" prefHeight="65.0" prefWidth="230.0" text="Préstamos" />
+            <Button fx:id="botonResumen" alignment="BASELINE_LEFT" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickResumenCuenta" prefHeight="65.0" prefWidth="230.0" text="Resumen Cuenta">
+               <padding>
+                  <Insets left="30.0" />
+               </padding></Button>
+            <Button fx:id="botonMovimientos" alignment="BASELINE_LEFT" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickMovimientos" prefHeight="65.0" prefWidth="230.0" text="Movimientos">
+               <padding>
+                  <Insets left="30.0" />
+               </padding></Button>
+            <Button fx:id="botonTarjetas" alignment="BASELINE_LEFT" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickTarjetas" prefHeight="65.0" prefWidth="230.0" text="Tarjetas">
+               <padding>
+                  <Insets left="30.0" />
+               </padding></Button>
+            <Button fx:id="botonHipotecas" alignment="BASELINE_LEFT" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickHipotecas" prefHeight="65.0" prefWidth="230.0" text="Hipotecas">
+               <padding>
+                  <Insets left="30.0" />
+               </padding></Button>
+            <Button fx:id="botonPrestamos" alignment="BASELINE_LEFT" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickPrestamos" prefHeight="65.0" prefWidth="230.0" text="Préstamos">
+               <padding>
+                  <Insets left="30.0" />
+               </padding></Button>
          </children>
       </VBox>
    </left>
@@ -34,12 +45,12 @@
                   <Font size="31.0" />
                </font>
             </Label>
-            <Region prefHeight="100.0" prefWidth="844.0" />
+            <Region prefHeight="100.0" prefWidth="844.0" HBox.hgrow="ALWAYS" />
             <Button fx:id="botonPerfil" mnemonicParsing="false" onAction="#clickPerfil" prefHeight="84.0" prefWidth="179.0" text="Perfil" />
          </children></HBox>
    </top>
    <center>
-      <SubScene fx:id="sceneCentral" height="572.0" width="1065.0" BorderPane.alignment="CENTER">
+      <SubScene fx:id="sceneCentral" height="571.0" styleClass="transparente" width="1057.0" BorderPane.alignment="CENTER">
         <root>
           <Region />
         </root>
