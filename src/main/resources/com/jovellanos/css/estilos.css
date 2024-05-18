@@ -7,11 +7,6 @@
     -fx-background-color: white;
 }
 
-.Flechas {
-    -fx-background-color: transparent;
-    -fx-padding: 0;
-}
-
 .root {
     -primario: #5ebcac;
     -secundario: #c4fff9;
@@ -41,6 +36,11 @@
 .cuenta {
     -fx-alignment: CENTER-LEFT;
     -fx-padding: 10px;
+}
+
+.flechas {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
 }
 
 /* Menú principal */

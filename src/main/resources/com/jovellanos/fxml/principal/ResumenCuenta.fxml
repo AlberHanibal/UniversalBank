@@ -10,61 +10,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1260.0" styleClass="fondo" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jovellanos.controladores.principal.ControladorResumenCuenta">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="1100.0" prefHeight="600.0" prefWidth="1200.0" styleClass="fondo" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jovellanos.controladores.principal.ControladorResumenCuenta">
    <children>
-      <Pane fx:id="pnlCuentas" layoutX="87.0" layoutY="14.0" prefHeight="161.0" prefWidth="355.0" styleClass="Etiquetas">
-         <children>
-            <Label fx:id="lblID" layoutX="14.0" layoutY="14.0" prefHeight="35.0" prefWidth="325.0" text="ID: 000-000">
-               <font>
-                  <Font name="System Bold Italic" size="24.0" />
-               </font>
-            </Label>
-            <Label fx:id="lblBalance" layoutX="6.0" layoutY="87.0" prefHeight="70.0" prefWidth="344.0" text="Balance: 0 €">
-               <font>
-                  <Font name="System Bold" size="36.0" />
-               </font>
-            </Label>
-         </children>
-      </Pane>
-      <Pane fx:id="pnlTarjetas" layoutX="597.0" layoutY="23.0" prefHeight="161.0" prefWidth="355.0" styleClass="Etiquetas">
-         <children>
-            <Label fx:id="lblIDTarjeta" layoutX="15.0" layoutY="8.0" prefHeight="35.0" prefWidth="325.0" text="ID: 000-000">
-               <font>
-                  <Font name="System Bold Italic" size="24.0" />
-               </font>
-            </Label>
-            <Label fx:id="lblTipo" layoutX="16.0" layoutY="105.0" prefHeight="20.0" prefWidth="325.0" text="Tipo de Tarjeta:">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <Label fx:id="lblNumero" layoutX="15.0" layoutY="43.0" prefHeight="20.0" prefWidth="325.0" text="Numero: ">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <Label fx:id="lblCVV" layoutX="15.0" layoutY="63.0" prefHeight="20.0" prefWidth="133.0" text="Codigo CVV: ">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <Label fx:id="lblLimite" layoutX="15.0" layoutY="85.0" prefHeight="20.0" prefWidth="325.0" text="Limite Diario: ">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <Label fx:id="lblPin" layoutX="178.0" layoutY="63.0" prefHeight="20.0" prefWidth="151.0" text="Codigo Pin: ">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <Label fx:id="lblCaducidad" layoutX="14.0" layoutY="127.0" prefHeight="20.0" prefWidth="308.0" text="Caduca el: ">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-         </children></Pane>
-      <TableView fx:id="tblMovimientos" layoutX="40.0" layoutY="213.0" prefHeight="301.0" prefWidth="568.0">
+      <TableView fx:id="tblMovimientos" layoutX="39.0" layoutY="256.0" prefHeight="301.0" prefWidth="568.0">
         <columns>
           <TableColumn fx:id="colCantidad" prefWidth="110.0" text="Cantidad" />
             <TableColumn fx:id="colAsunto" prefWidth="190.0" text="Asunto" />
@@ -72,41 +20,102 @@
             <TableColumn fx:id="colTipo" prefWidth="114.0" text="Tipo" />
         </columns>
       </TableView>
-      <Button fx:id="btnSiguienteTarjeta" layoutX="964.0" layoutY="81.0" mnemonicParsing="false" onAction="#TarjetaSiguiente" styleClass="Flechas">
-         <graphic>
-            <ImageView fx:id="imgSiguienteTarjeta" fitHeight="38.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../imagenes/FlechDer.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
-      <Button fx:id="btnAnteriorTarjeta" layoutX="543.0" layoutY="80.0" mnemonicParsing="false" onAction="#TarjetaAnterior" styleClass="Flechas">
-         <graphic>
-            <ImageView fx:id="imgAnteriorTarjeta" fitHeight="38.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../imagenes/FlechIzq.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
-      <Button fx:id="btnAnteriorCuenta" layoutX="33.0" layoutY="80.0" mnemonicParsing="false" onAction="#CuentaAnterior" styleClass="Flechas">
-         <graphic>
-            <ImageView fx:id="imgAnteriorCuenta" fitHeight="38.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../imagenes/FlechIzq.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
-      <Button fx:id="btnSiguienteCuenta" layoutX="456.0" layoutY="81.0" mnemonicParsing="false" onAction="#CuentaSiguiente" styleClass="Flechas">
-         <graphic>
-            <ImageView fx:id="imgSiguienteCuenta" fitHeight="38.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../imagenes/FlechDer.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
+      <Pane layoutX="33.0" layoutY="14.0" prefHeight="215.0" prefWidth="463.0" styleClass="card">
+         <children>
+            <Pane fx:id="pnlCuentas" layoutX="54.0" layoutY="27.0" prefHeight="161.0" prefWidth="355.0" styleClass="Etiquetas">
+               <children>
+                  <Label fx:id="lblID" layoutX="14.0" layoutY="14.0" prefHeight="35.0" prefWidth="325.0" text="ID: 000-000">
+                     <font>
+                        <Font name="System Bold Italic" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblBalance" layoutX="6.0" layoutY="87.0" prefHeight="70.0" prefWidth="344.0" text="Balance: 0 €">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Button fx:id="btnAnteriorCuenta" layoutY="65.0" mnemonicParsing="false" onAction="#CuentaAnterior" prefHeight="70.0" prefWidth="66.0" styleClass="flechas">
+               <graphic>
+                  <ImageView fx:id="imgAnteriorCuenta" fitHeight="85.0" fitWidth="50.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../../assets/icons/arrow_izq.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnSiguienteCuenta" layoutX="397.0" layoutY="65.0" mnemonicParsing="false" onAction="#CuentaSiguiente" prefHeight="70.0" prefWidth="66.0" styleClass="flechas">
+               <graphic>
+                  <ImageView fx:id="imgSiguienteCuenta" fitHeight="85.0" fitWidth="50.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../../assets/icons/arrow_dcha.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </Pane>
+      <Pane layoutX="550.0" layoutY="14.0" prefHeight="215.0" prefWidth="463.0" styleClass="card">
+         <children>
+            <Pane fx:id="pnlTarjetas" layoutX="54.0" layoutY="27.0" prefHeight="161.0" prefWidth="355.0" styleClass="Etiquetas">
+               <children>
+                  <Label fx:id="lblIDTarjeta" layoutX="15.0" layoutY="8.0" prefHeight="35.0" prefWidth="325.0" text="ID: 000-000">
+                     <font>
+                        <Font name="System Bold Italic" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblTipo" layoutX="16.0" layoutY="105.0" prefHeight="20.0" prefWidth="325.0" text="Tipo de Tarjeta:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblNumero" layoutX="15.0" layoutY="43.0" prefHeight="20.0" prefWidth="325.0" text="Numero: ">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblCVV" layoutX="15.0" layoutY="63.0" prefHeight="20.0" prefWidth="133.0" text="Codigo CVV: ">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblLimite" layoutX="15.0" layoutY="85.0" prefHeight="20.0" prefWidth="325.0" text="Limite Diario: ">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblPin" layoutX="178.0" layoutY="63.0" prefHeight="20.0" prefWidth="151.0" text="Codigo Pin: ">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblCaducidad" layoutX="14.0" layoutY="127.0" prefHeight="20.0" prefWidth="308.0" text="Caduca el: ">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Button fx:id="btnSiguienteTarjeta" layoutX="397.0" layoutY="65.0" mnemonicParsing="false" onAction="#TarjetaSiguiente" prefHeight="70.0" prefWidth="66.0" styleClass="flechas">
+               <graphic>
+                  <ImageView fx:id="imgSiguienteTarjeta" fitHeight="85.0" fitWidth="50.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../../assets/icons/arrow_dcha.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnAnteriorTarjeta" layoutY="65.0" mnemonicParsing="false" onAction="#TarjetaAnterior" prefHeight="70.0" prefWidth="66.0" styleClass="flechas">
+               <graphic>
+                  <ImageView fx:id="imgAnteriorTarjeta" fitHeight="85.0" fitWidth="50.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../../assets/icons/arrow_izq.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>
