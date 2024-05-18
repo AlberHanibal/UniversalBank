@@ -32,7 +32,7 @@ public class ControladorPrincipal {
     private Button botonTarjetas;
 
     @FXML
-    private Button botonHipotecas;
+    private Button botonPagos;
     
     @FXML
     private SubScene sceneCentral;
@@ -49,7 +49,7 @@ public class ControladorPrincipal {
         botonResumen.setGraphic(new ImageView(new Image(App.class.getResource("assets/icons/dashboard.png").toExternalForm(), iconWidth, iconHeight, true, true)));
         botonMovimientos.setGraphic(new ImageView(new Image(App.class.getResource("assets/icons/arrows.png").toExternalForm(), iconWidth, iconHeight, true, true)));
         botonTarjetas.setGraphic(new ImageView(new Image(App.class.getResource("assets/icons/credit-card.png").toExternalForm(), iconWidth, iconHeight, true, true)));
-        botonHipotecas.setGraphic(new ImageView(new Image(App.class.getResource("assets/icons/get-money.png").toExternalForm(), iconWidth, iconHeight, true, true)));
+        botonPagos.setGraphic(new ImageView(new Image(App.class.getResource("assets/icons/get-money.png").toExternalForm(), iconWidth, iconHeight, true, true)));
 
         for (Cuenta c : usuario.getListaCuentas()) {
             if (c.getHistorialMovimientos().isEmpty()) {
@@ -82,13 +82,8 @@ public class ControladorPrincipal {
     }
 
     @FXML
-    private void clickHipotecas() {
-        cambiarCentral("fxml/principal/Hipotecas.fxml");
-    }
-
-    @FXML
-    private void clickPrestamos() {
-        cambiarCentral("fxml/principal/Prestamos.fxml");
+    private void clickPagos() {
+        cambiarCentral("fxml/principal/PagosRecurrentes.fxml");
     }
 
     @FXML

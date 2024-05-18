@@ -26,11 +26,7 @@
                <padding>
                   <Insets left="30.0" />
                </padding></Button>
-            <Button fx:id="botonHipotecas" alignment="BASELINE_LEFT" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickHipotecas" prefHeight="65.0" prefWidth="230.0" text="Hipotecas">
-               <padding>
-                  <Insets left="30.0" />
-               </padding></Button>
-            <Button fx:id="botonPrestamos" alignment="BASELINE_LEFT" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickPrestamos" prefHeight="65.0" prefWidth="230.0" text="Préstamos">
+            <Button fx:id="botonPagos" alignment="BASELINE_LEFT" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickPagos" prefHeight="65.0" prefWidth="230.0" text="Pagos recurrentes">
                <padding>
                   <Insets left="30.0" />
                </padding></Button>
