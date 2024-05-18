@@ -13,7 +13,8 @@
 }
 
 .root {
-    -primario: #358f80;
+    -primario: #5ebcac;
+    -secundario: #c4fff9;
     -card: #e6fce1ec;
     -fondo: #93d6b93e;
     -sombra: #066b54;
@@ -40,6 +41,23 @@
 .cuenta {
     -fx-alignment: CENTER-LEFT;
     -fx-padding: 10px;
+}
+
+/* Menú principal */
+
+.menu {
+    -fx-background-color: -primario;
+}
+
+.menu .button {
+    -fx-background-color: transparent;
+    -fx-text-fill: black;
+    -fx-font-family: "Tahoma";
+    -fx-font-size: 16
+}
+
+.menu .button:hover {
+    -fx-background-color: -secundario;
 }
 
 /* Tablas https://edencoding.com/style-tableview-javafx/ */
