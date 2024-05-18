@@ -33,15 +33,12 @@ public class ControladorPerfil {
     private Label lblCorreo;
 
     public void initialize() {
-        App.getScene().getWindow().setWidth(1260);
-        App.getScene().getWindow().setHeight(700);
-
         mostrarDatosPerfil();
     }
 
     @FXML
     private void ModificarPerfil() {
-        App.getScene().setRoot(App.cargarEscena("fxml/FormularioPerfil.fxml"));
+        App.getScene().setRoot(App.cargarEscena("fxml/principal/FormularioPerfil.fxml"));
     }
 
     private void mostrarDatosPerfil() {
