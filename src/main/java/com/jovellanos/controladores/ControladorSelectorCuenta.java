@@ -29,8 +29,8 @@ public class ControladorSelectorCuenta {
     }
 
     @FXML
-    private void Continuar() {
-        App.getScene().setRoot(App.cargarEscena("fxml/principal/Principal.fxml"));
+    private void Cancelar() {
+        App.getScene().setRoot(App.cargarEscena("fxml/Login.fxml"));
     }
 
     @FXML

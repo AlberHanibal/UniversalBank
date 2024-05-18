@@ -26,52 +26,52 @@
          <children>
             <AnchorPane layoutX="100.0" layoutY="33.0" prefHeight="370.0" prefWidth="413.0" styleClass="card">
                <children>
-                  <Label layoutX="94.0" layoutY="34.0" text="Creación de usuario">
+                  <Label layoutX="96.0" layoutY="25.0" text="Creación de usuario">
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>
                   </Label>
-                  <Label fx:id="LabelUsuario" layoutX="73.0" layoutY="90.0" text="Usuario *">
+                  <Label fx:id="LabelUsuario" layoutX="73.0" layoutY="75.0" text="Usuario *">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="TextFieldUsuario" layoutX="73.0" layoutY="107.0" prefHeight="25.0" prefWidth="267.0" />
-                  <Label fx:id="LabelContraseña" layoutX="72.0" layoutY="140.0" text="Contraseña *">
+                  <TextField fx:id="TextFieldUsuario" layoutX="73.0" layoutY="92.0" prefHeight="25.0" prefWidth="267.0" styleClass="inputs" />
+                  <Label fx:id="LabelContraseña" layoutX="72.0" layoutY="125.0" text="Contraseña *">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <PasswordField fx:id="TextFieldContraseña" layoutX="73.0" layoutY="160.0" prefHeight="25.0" prefWidth="267.0" />
-                  <Label fx:id="LabelConfirmarPass" layoutX="72.0" layoutY="199.0" text="Confirmar Contraseña*">
+                  <PasswordField fx:id="TextFieldContraseña" layoutX="73.0" layoutY="145.0" prefHeight="25.0" prefWidth="267.0" styleClass="inputs" />
+                  <Label fx:id="LabelConfirmarPass" layoutX="72.0" layoutY="184.0" text="Confirmar Contraseña*">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <PasswordField fx:id="TextFieldConfirmarPass" layoutX="72.0" layoutY="219.0" prefHeight="25.0" prefWidth="267.0" />
-                  <Label layoutX="74.0" layoutY="250.0" text="Nombre">
+                  <PasswordField fx:id="TextFieldConfirmarPass" layoutX="72.0" layoutY="204.0" prefHeight="25.0" prefWidth="267.0" styleClass="inputs" />
+                  <Label layoutX="74.0" layoutY="235.0" text="Nombre">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="TextFieldNombre" layoutX="74.0" layoutY="270.0" prefHeight="25.0" prefWidth="267.0" />
-                  <Label layoutX="74.0" layoutY="306.0" text="Apellidos">
+                  <TextField fx:id="TextFieldNombre" layoutX="74.0" layoutY="255.0" prefHeight="25.0" prefWidth="267.0" styleClass="inputs" />
+                  <Label layoutX="74.0" layoutY="291.0" text="Apellidos">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="TextFieldApellidos" layoutX="73.0" layoutY="326.0" prefHeight="25.0" prefWidth="267.0" />
-                  <Label layoutY="413.0" text="* Campos obligatorios" textFill="RED">
+                  <TextField fx:id="TextFieldApellidos" layoutX="73.0" layoutY="311.0" prefHeight="25.0" prefWidth="267.0" styleClass="inputs" />
+                  <Label layoutX="14.0" layoutY="409.0" text="* Campos obligatorios" textFill="RED">
                      <font>
                         <Font name="System Bold Italic" size="14.0" />
                      </font>
                   </Label>
-                  <Button alignment="CENTER" layoutX="70.0" layoutY="364.0" minHeight="39.0" minWidth="110.0" mnemonicParsing="false" onAction="#Continuar" text="Crear Usuario">
+                  <Button alignment="CENTER" layoutX="50.0" layoutY="355.0" minHeight="39.0" minWidth="110.0" mnemonicParsing="false" onAction="#Continuar" text="Crear Usuario">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER" layoutX="223.0" layoutY="364.0" minHeight="39.0" minWidth="110.0" mnemonicParsing="false" onAction="#Cancelar" text="Cancelar">
+                  <Button alignment="CENTER" cancelButton="true" layoutX="233.0" layoutY="355.0" minHeight="39.0" minWidth="110.0" mnemonicParsing="false" onAction="#Cancelar" styleClass="cancelar" text="Cancelar">
                      <font>
                         <Font size="18.0" />
                      </font>

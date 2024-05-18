@@ -10,6 +10,8 @@
 .root {
     -primario: #5ebcac;
     -secundario: #c4fff9;
+    -cancelar:rgb(244, 137, 128);
+    -cancelarOsc:rgb(109, 46, 40);
     -card: #e6fce1ec;
     -fondo: #93d6b93e;
     -sombra: #066b54;
@@ -19,6 +21,39 @@
 
 .fondo {
     -fx-background-color: -fondo;
+    -fx-font-family: "Verdana";
+}
+
+.textoPeq {
+    -fx-font-size: 12px;
+}
+
+.textoNormal {
+    -fx-font-size: 16px;
+}
+
+.button {
+    -fx-font-family: "Verdana";
+    -fx-font-size: 20px;
+    -fx-background-color: -primario;
+    -fx-background-radius: 30px;
+    -fx-text-fill: black;
+}
+
+.button:hover {
+    -fx-background-color: -sombra;
+    -fx-text-fill: white;
+
+}
+
+.cancelar {
+    -fx-background-color: -cancelar;
+    -fx-text-fill: black;
+}
+
+.cancelar:hover {
+    -fx-background-color: -cancelarOsc;
+    -fx-text-fill: white;
 }
 
 .card {
@@ -31,6 +66,7 @@
 
 .inputs {
     -fx-background-radius: 60px;
+    -fx-witdh: 50px;
 }
 
 .cuenta {
@@ -43,15 +79,12 @@
     -fx-padding: 0;
 }
 
-.perfil {
-    -fx-background-color: -primario;
-    -fx-text-fill: black;
-    -fx-font-family: "Tahoma";
-    -fx-font-size: 18
+.flechas:hover {
+    -fx-background-color: transparent;
 }
 
-.perfil:hover {
-    -fx-background-color: -sombra;
+.perfil {
+    -fx-background-radius: 0px;
 }
 /* Menú principal */
 
@@ -61,6 +94,7 @@
 
 .menu .button {
     -fx-background-color: transparent;
+    -fx-background-radius: 0px;
     -fx-text-fill: black;
     -fx-font-family: "Tahoma";
     -fx-font-size: 16

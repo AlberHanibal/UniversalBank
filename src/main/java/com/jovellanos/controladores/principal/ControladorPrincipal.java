@@ -14,13 +14,9 @@ import com.jovellanos.modelo.Usuario;
 import javafx.fxml.FXML;
 import javafx.scene.SubScene;
 import javafx.scene.control.Button;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 
 public class ControladorPrincipal {
     private Usuario usuario = App.getUsuario();
-    private int iconWidth = 30;
-    private int iconHeight = 30;
 
     @FXML
     private Button botonResumen;
