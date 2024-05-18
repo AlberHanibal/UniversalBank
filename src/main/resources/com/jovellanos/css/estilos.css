@@ -43,6 +43,16 @@
     -fx-padding: 0;
 }
 
+.perfil {
+    -fx-background-color: -primario;
+    -fx-text-fill: black;
+    -fx-font-family: "Tahoma";
+    -fx-font-size: 18
+}
+
+.perfil:hover {
+    -fx-background-color: -sombra;
+}
 /* Menú principal */
 
 .menu {

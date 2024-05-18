@@ -45,12 +45,6 @@ public class ControladorPrincipal {
         App.getScene().getWindow().setWidth(1300);
         App.getScene().getWindow().setHeight(750);
 
-        // Iconos menú
-        botonResumen.setGraphic(new ImageView(new Image(App.class.getResource("assets/icons/dashboard.png").toExternalForm(), iconWidth, iconHeight, true, true)));
-        botonMovimientos.setGraphic(new ImageView(new Image(App.class.getResource("assets/icons/arrows.png").toExternalForm(), iconWidth, iconHeight, true, true)));
-        botonTarjetas.setGraphic(new ImageView(new Image(App.class.getResource("assets/icons/credit-card.png").toExternalForm(), iconWidth, iconHeight, true, true)));
-        botonPagos.setGraphic(new ImageView(new Image(App.class.getResource("assets/icons/get-money.png").toExternalForm(), iconWidth, iconHeight, true, true)));
-
         for (Cuenta c : usuario.getListaCuentas()) {
             if (c.getHistorialMovimientos().isEmpty()) {
                 c.setHistorialMovimientos(crearMovimientos()); // Codigo temporal para generar movimientos falsos

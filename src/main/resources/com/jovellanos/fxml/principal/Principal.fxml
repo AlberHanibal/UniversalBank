@@ -4,6 +4,8 @@
 <?import javafx.scene.SubScene?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
@@ -16,20 +18,48 @@
          <children>
             <Button fx:id="botonResumen" alignment="BASELINE_LEFT" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickResumenCuenta" prefHeight="65.0" prefWidth="230.0" text="Resumen Cuenta">
                <padding>
-                  <Insets left="30.0" />
-               </padding></Button>
+                  <Insets left="20.0" />
+               </padding>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../assets/icons/dashboard_.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
             <Button fx:id="botonMovimientos" alignment="BASELINE_LEFT" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickMovimientos" prefHeight="65.0" prefWidth="230.0" text="Movimientos">
                <padding>
-                  <Insets left="30.0" />
-               </padding></Button>
+                  <Insets left="20.0" />
+               </padding>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../assets/icons/opposite-arrows.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
             <Button fx:id="botonTarjetas" alignment="BASELINE_LEFT" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickTarjetas" prefHeight="65.0" prefWidth="230.0" text="Tarjetas">
                <padding>
-                  <Insets left="30.0" />
-               </padding></Button>
+                  <Insets left="20.0" />
+               </padding>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../assets/icons/credit-card.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
             <Button fx:id="botonPagos" alignment="BASELINE_LEFT" minHeight="-Infinity" mnemonicParsing="false" onAction="#clickPagos" prefHeight="65.0" prefWidth="230.0" text="Pagos recurrentes">
                <padding>
-                  <Insets left="30.0" />
-               </padding></Button>
+                  <Insets left="20.0" />
+               </padding>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../assets/icons/get-money.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
          </children>
       </VBox>
    </left>
@@ -42,7 +72,17 @@
                </font>
             </Label>
             <Region prefHeight="100.0" prefWidth="844.0" HBox.hgrow="ALWAYS" />
-            <Button fx:id="botonPerfil" mnemonicParsing="false" onAction="#clickPerfil" prefHeight="84.0" prefWidth="179.0" text="Perfil" />
+            <Button fx:id="botonPerfil" alignment="TOP_CENTER" mnemonicParsing="false" onAction="#clickPerfil" prefHeight="52.0" prefWidth="155.0" styleClass="perfil" text="Perfil">
+               <graphic>
+                  <ImageView fitHeight="46.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../assets/icons/profile.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Tahoma" size="17.0" />
+               </font></Button>
          </children></HBox>
    </top>
    <center>
