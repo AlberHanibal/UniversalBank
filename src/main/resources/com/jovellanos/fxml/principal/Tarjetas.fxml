@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<<<<<<< HEAD
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
@@ -7,3 +8,118 @@
 <VBox xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" spacing="10" alignment="CENTER" fx:controller="com.jovellanos.ControladorTarjetas">
 
 <Label text="en tarjetas" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jovellanos.controladores.principal.ControladorTarjetas"/>
+=======
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Label?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1260.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jovellanos.controladores.principal.ControladorTarjetas">
+   <children>
+      <Button fx:id="btnAnteriorTarjeta" layoutX="183.0" layoutY="94.0" mnemonicParsing="false" onAction="#TarjetaAnterior" styleClass="Flechas">
+         <graphic>
+            <ImageView fx:id="imgAnteriorTarjeta" fitHeight="38.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../imagenes/FlechIzq.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="btnSiguienteTarjeta" layoutX="604.0" layoutY="95.0" mnemonicParsing="false" onAction="#TarjetaSiguiente" styleClass="Flechas">
+         <graphic>
+            <ImageView fx:id="imgSiguienteTarjeta" fitHeight="38.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../imagenes/FlechDer.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Pane fx:id="pnlTarjetas" layoutX="237.0" layoutY="37.0" prefHeight="161.0" prefWidth="355.0" styleClass="Etiquetas">
+         <children>
+            <Label fx:id="lblIDTarjeta" layoutX="15.0" layoutY="8.0" prefHeight="35.0" prefWidth="325.0" text="ID: 000-000">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblTipo" layoutX="16.0" layoutY="105.0" prefHeight="20.0" prefWidth="325.0" text="Tipo de Tarjeta:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblNumero" layoutX="15.0" layoutY="43.0" prefHeight="20.0" prefWidth="325.0" text="Numero: ">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblCVV" layoutX="15.0" layoutY="63.0" prefHeight="20.0" prefWidth="133.0" text="Codigo CVV: ">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblLimite" layoutX="15.0" layoutY="85.0" prefHeight="20.0" prefWidth="325.0" text="Limite Diario: ">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblPin" layoutX="178.0" layoutY="63.0" prefHeight="20.0" prefWidth="151.0" text="Codigo Pin: ">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblCaducidad" layoutX="14.0" layoutY="127.0" prefHeight="20.0" prefWidth="308.0" text="Caduca el: ">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="25.0" layoutY="212.0" prefHeight="72.0" prefWidth="717.0">
+         <children>
+            <Button alignment="CENTER" layoutX="14.0" layoutY="18.0" minHeight="39.0" minWidth="110.0" mnemonicParsing="false" onAction="#CancelarTarjeta" text="Cancelar Tarjeta">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button alignment="CENTER" layoutX="181.0" layoutY="18.0" minHeight="39.0" minWidth="110.0" mnemonicParsing="false" onAction="#ReactivarTarjeta" text="Reactivar Tarjeta">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button alignment="CENTER" layoutX="352.0" layoutY="18.0" minHeight="39.0" minWidth="110.0" mnemonicParsing="false" onAction="#BloquearTarjeta" text="Bloquear Tarjeta">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button alignment="CENTER" layoutX="518.0" layoutY="18.0" minHeight="39.0" minWidth="110.0" mnemonicParsing="false" onAction="#DesbloquearTarjeta" text="Desbloquear Tarjeta">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane layoutX="98.0" layoutY="318.0" prefHeight="170.0" prefWidth="634.0">
+         <children>
+            <Button alignment="CENTER" layoutX="483.0" layoutY="114.0" minHeight="39.0" minWidth="110.0" mnemonicParsing="false" onAction="#NuevaTarjeta" text="Nueva Tarjeta">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Label layoutX="10.0" layoutY="19.0" prefHeight="19.0" prefWidth="86.0" text="Tipo de Tarjeta:" />
+            <TextField fx:id="txtTipo" layoutX="105.0" layoutY="16.0" promptText="Credito / Debito..." />
+            <TextField fx:id="txtNumero" layoutX="105.0" layoutY="47.0" promptText="0000-0000-0000-0000" />
+            <Label layoutX="10.0" layoutY="50.0" prefHeight="19.0" prefWidth="86.0" text="Numero:" />
+            <Label layoutX="10.0" layoutY="83.0" prefHeight="19.0" prefWidth="86.0" text="Codigo CVV: " />
+            <TextField fx:id="txtCVV" layoutX="105.0" layoutY="80.0" />
+            <Label layoutX="277.0" layoutY="17.0" prefHeight="19.0" prefWidth="86.0" text="Codigo Pin:" />
+            <TextField fx:id="txtPin" layoutX="404.0" layoutY="13.0" />
+            <Label layoutX="277.0" layoutY="49.0" prefHeight="19.0" prefWidth="86.0" text="Limite diario" />
+            <TextField fx:id="txtLimite" layoutX="404.0" layoutY="45.0" />
+            <Label layoutX="277.0" layoutY="83.0" prefHeight="19.0" prefWidth="116.0" text="Fecha de Caducidad" />
+            <DatePicker fx:id="dtpCaducidad" layoutX="404.0" layoutY="80.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
+>>>>>>> main

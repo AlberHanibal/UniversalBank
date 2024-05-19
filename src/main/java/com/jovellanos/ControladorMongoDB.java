@@ -46,6 +46,10 @@ public class ControladorMongoDB {
         collection.replaceOne(eq("username", username), usuario);
     }
 
+    public void ActualizarUsuario(Usuario usuario) {
+        collection.replaceOne(eq("username", usuario.getUsername()), usuario);
+    }
+
     public boolean ComprobarUsuario(String username) {
         Usuario usuario = buscarUsuarioPorNombre(username);
         return usuario != null;

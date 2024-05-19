@@ -1,3 +1,186 @@
+.Etiquetas {
+    -fx-border-width: 2px;
+    -fx-border-color: black;
+    -fx-border-radius: 30px;
+    -fx-padding: 5px 10px;
+    -fx-background-radius: 30px;
+    -fx-background-color: white;
+}
+
+.root {
+    -primario: #5ebcac;
+    -secundario: #c4fff9;
+    -cancelar:rgb(244, 137, 128);
+    -cancelarOsc:rgb(109, 46, 40);
+    -card: #e6fce1ec;
+    -fondo: #93d6b93e;
+    -sombra: #066b54;
+    -tabla1: #1dbbdd44;
+    -tabla2: #93f9b944;
+}
+
+.fondo {
+    -fx-background-color: -fondo;
+    -fx-font-family: "Verdana";
+}
+
+.textoPeq {
+    -fx-font-size: 12px;
+}
+
+.textoNormal {
+    -fx-font-size: 16px;
+}
+
 .button {
-    -fx-font-family: monospace;
+    -fx-font-family: "Verdana";
+    -fx-font-size: 20px;
+    -fx-background-color: -primario;
+    -fx-background-radius: 30px;
+    -fx-text-fill: black;
+}
+
+.button:hover {
+    -fx-background-color: -sombra;
+    -fx-text-fill: white;
+
+}
+
+.cancelar {
+    -fx-background-color: -cancelar;
+    -fx-text-fill: black;
+}
+
+.cancelar:hover {
+    -fx-background-color: -cancelarOsc;
+    -fx-text-fill: white;
+}
+
+.card {
+    -fx-background-color: -card;
+    -fx-background-radius: 30px;
+    -fx-border-radius: 50px;
+
+    -fx-effect: dropshadow(three-pass-box, -sombra, 10, 0, 2, -1);
+}
+
+.inputs {
+    -fx-background-radius: 60px;
+    -fx-witdh: 50px;
+}
+
+.cuenta {
+    -fx-alignment: CENTER-LEFT;
+    -fx-padding: 10px;
+}
+
+.flechas {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.flechas:hover {
+    -fx-background-color: transparent;
+}
+
+.perfil {
+    -fx-background-radius: 0px;
+}
+/* Menú principal */
+
+.menu {
+    -fx-background-color: -primario;
+}
+
+.menu .button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0px;
+    -fx-text-fill: black;
+    -fx-font-family: "Tahoma";
+    -fx-font-size: 16
+}
+
+.menu .button:hover {
+    -fx-background-color: -secundario;
+}
+
+/* Tablas https://edencoding.com/style-tableview-javafx/ */
+
+.table-view {
+    -fx-background-color: transparent;
+    -fx-font-size: 14px;
+}
+
+.table-view .corner {
+    -fx-background-color: transparent;
+}
+
+/* Headers */
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-font-size: 16px;
+}
+
+.table-view .column-header-background .filler {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: linear-gradient(to bottom, -tabla1, -tabla2);
+    -fx-background-radius: 7px 7px 0px 0px;
+    -fx-background-insets: 0 0 0 0;
+    -fx-padding: 0 0 5px 0;
+}
+
+/* Celdas y Líneas */
+
+.table-view .table-cell {
+    -fx-border-color: transparent;
+    -fx-padding: 2 0 2 10px;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: -table2;
+    -fx-text-background-color: purple;
+}
+.table-row-cell:filled:selected {
+    -fx-background-color: -primario;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: -tabla2;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em;
+}
+
+.table-row-cell:even {
+    -fx-background-color: -tabla1;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em;
+}
+
+/* ScrollBars */
+
+.table-view .virtual-flow .scroll-bar:vertical,
+.table-view .virtual-flow .scroll-bar:vertical .track,
+.table-view .virtual-flow .scroll-bar:vertical .track-background,
+.table-view .virtual-flow .scroll-bar:horizontal,
+.table-view .virtual-flow .scroll-bar:horizontal .track,
+.table-view .virtual-flow .scroll-bar:horizontal .track-background {
+    -fx-background-color: transparent;
+}
+
+.table-view .virtual-flow .scroll-bar .increment-button,
+.table-view .virtual-flow .scroll-bar .decrement-button {
+    -fx-opacity: 0;
+    -fx-padding: 2;
+}
+
+.table-view .virtual-flow .scroll-bar:vertical .thumb {
+    -fx-background-color: linear-gradient(to bottom, -tabla1, -tabla2);
+}
+
+.table-view .virtual-flow .scroll-bar:horizontal .thumb {
+    -fx-background-color: linear-gradient(to right, -tabla1, -tabla2);
 }
