@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.Random;
 
 import com.jovellanos.App;
+import com.jovellanos.ControladorMongoDB;
 import com.jovellanos.modelo.Cuenta;
 import com.jovellanos.modelo.Movimiento;
 import com.jovellanos.modelo.Tarjeta;
@@ -17,6 +18,7 @@ import javafx.scene.control.Button;
 
 public class ControladorPrincipal {
     private Usuario usuario = App.getUsuario();
+    ControladorMongoDB controlMongo = new ControladorMongoDB();
 
     @FXML
     private Button botonResumen;
@@ -46,10 +48,18 @@ public class ControladorPrincipal {
                 c.setHistorialMovimientos(crearMovimientos()); // Codigo temporal para generar movimientos falsos
                 c.setListaTarjetas(crearTarjetas()); // Codigo temporal para generar tarjetas falsas (Pueden salir 0)
 
-                Random random = new Random();
-                double balance = random.nextDouble() * 10000;
+                double balance = 0.0;
+
+                for (Movimiento m : c.getHistorialMovimientos()) {
+                    balance += m.getCantidad();
+                }
+
                 balance = Math.round(balance * 100.0) / 100.0;
                 c.setBalance(balance);
+                usuario.actualizarCuenta(c);
+
+                App.setUsuario(usuario);
+                controlMongo.ActualizarUsuario(usuario);
             }
         }
 
