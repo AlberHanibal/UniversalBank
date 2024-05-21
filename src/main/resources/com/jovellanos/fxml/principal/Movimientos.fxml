@@ -28,14 +28,14 @@
                   <Font size="18.0" />
                </font>
             </Button>
-            <Label layoutX="341.0" layoutY="86.0" prefHeight="20.0" prefWidth="170.0" text="Tipo de Movimiento" />
+            <Label layoutX="341.0" layoutY="86.0" prefHeight="20.0" prefWidth="170.0" text="Tipo de movimiento" />
             <TextField fx:id="txtTipo" layoutX="505.0" layoutY="81.0" styleClass="inputs" />
-            <TextField fx:id="txtAsunto" layoutX="426.0" layoutY="29.0" styleClass="inputs" />
+            <TextField fx:id="txtAsunto" layoutX="504.0" layoutY="29.0" styleClass="inputs" />
             <Label layoutX="341.0" layoutY="34.0" prefHeight="20.0" prefWidth="66.0" text="Asunto" />
-            <Label layoutX="24.0" layoutY="86.0" prefHeight="20.0" prefWidth="54.0" text="Fecha" />
+            <Label layoutX="14.0" layoutY="86.0" prefHeight="20.0" prefWidth="54.0" text="Fecha" />
             <DatePicker fx:id="dtpFecha" layoutX="90.0" layoutY="81.0" />
-            <Label layoutX="24.0" layoutY="34.0" prefHeight="20.0" prefWidth="79.0" text="Cantidad" />
-            <TextField fx:id="txtCantidad" layoutX="107.0" layoutY="29.0" styleClass="inputs" />
+            <Label layoutX="14.0" layoutY="34.0" prefHeight="20.0" prefWidth="79.0" text="Cantidad" />
+            <TextField fx:id="txtCantidad" layoutX="93.0" layoutY="29.0" styleClass="inputs" />
          </children>
          <styleClass>
             <String fx:value="card" />
