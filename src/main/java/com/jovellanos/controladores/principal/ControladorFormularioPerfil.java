@@ -88,12 +88,12 @@ public class ControladorFormularioPerfil {
         ControlMongo.ActualizarUsuario(usuario);
 
         App.setUsuario(usuario);
-        App.getScene().setRoot(App.cargarEscena("fxml/principal/Principal.fxml"));
+        App.getScene().setRoot(App.cargarEscena("fxml/principal/Perfil.fxml"));
     }
 
     @FXML
     private void Cancelar() {
-        App.getScene().setRoot(App.cargarEscena("fxml/principal/Principal.fxml"));
+        App.getScene().setRoot(App.cargarEscena("fxml/principal/Perfil.fxml"));
     }
 
     private void mostrarDatosPerfil() {
