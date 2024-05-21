@@ -18,6 +18,7 @@ import javafx.scene.Node;
 
 public class ControladorSelectorCuenta {
     private Usuario usuario = App.getUsuario();
+    ControladorMongoDB controlMongo = new ControladorMongoDB();
 
     @FXML
     private AnchorPane anchorPane;
@@ -25,6 +26,7 @@ public class ControladorSelectorCuenta {
     public void initialize() {
         App.getScene().getWindow().setWidth(1200);
         App.getScene().getWindow().setHeight(750);
+
         actualizarEtiquetas();
     }
 
