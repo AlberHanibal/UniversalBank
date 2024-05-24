@@ -1,8 +1,10 @@
 package com.jovellanos.modelo;
 
 import java.util.Date;
+import java.util.UUID;
 
 public class Movimiento {
+    private int id;
     private Double cantidad;
     private String asunto;
     private Date fecha;
@@ -17,6 +19,15 @@ public class Movimiento {
         this.asunto = asunto;
         this.fecha = fecha;
         this.tipo = tipo;
+        this.id = generarIDUnico();
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Double getCantidad() {
@@ -49,5 +60,15 @@ public class Movimiento {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
+    }
+
+    private int generarIDUnico() {
+        int nuevaId = UUID.randomUUID().hashCode();
+
+        if (nuevaId < 0) {
+            nuevaId = nuevaId * -1;
+        }
+        
+        return nuevaId;
     }
 }

@@ -1,5 +1,8 @@
 package com.jovellanos.controladores.principal;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.ArrayList;
 import java.util.Date;
 
 import com.jovellanos.App;
@@ -19,9 +22,11 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyCode;
 
 public class ControladorMovimientos {
+    ControladorMongoDB controlMongo = new ControladorMongoDB();
     private Usuario usuario = App.getUsuario();
     private Cuenta cuenta = App.getCuenta();
-
+    private int id = 0;
+    
     @FXML
     private TextField txtCantidad;
 
@@ -38,6 +43,9 @@ public class ControladorMovimientos {
     private TableView<Movimiento> tblMovimientos;
 
     @FXML
+    private TableColumn<Movimiento, Integer> colId;
+
+    @FXML
     private TableColumn<Movimiento, Double> colCantidad;
 
     @FXML
@@ -51,6 +59,7 @@ public class ControladorMovimientos {
 
     public void initialize() {
 
+        colId.setCellValueFactory(new PropertyValueFactory<>("id"));
         colCantidad.setCellValueFactory(new PropertyValueFactory<>("cantidad"));
         colAsunto.setCellValueFactory(new PropertyValueFactory<>("asunto"));
         colFecha.setCellValueFactory(new PropertyValueFactory<>("fecha"));
@@ -82,6 +91,29 @@ public class ControladorMovimientos {
                 NuevoMovimiento();
             }
         });
+
+        tblMovimientos.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue != null) {
+                id = newValue.getId();
+                txtCantidad.setText(newValue.getCantidad().toString());
+                txtAsunto.setText(newValue.getAsunto());
+                txtTipo.setText(newValue.getTipo());
+        
+                if (newValue.getFecha() != null) {
+                    LocalDate localDate = newValue.getFecha().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+                    dtpFecha.setValue(localDate);
+                } else {
+                    dtpFecha.setValue(null);
+                }
+            } else {
+                // Si no hay ningún elemento seleccionado, limpiar los campos de texto
+                id = 0;
+                txtCantidad.clear();
+                txtAsunto.clear();
+                txtTipo.clear();
+                dtpFecha.setValue(null);
+            }
+        });
     }
 
     @FXML
@@ -103,10 +135,61 @@ public class ControladorMovimientos {
         usuario.actualizarCuenta(cuenta);
         tblMovimientos.getItems().setAll(cuenta.getHistorialMovimientos());
 
-        ControladorMongoDB controlMongo = new ControladorMongoDB();
         controlMongo.ActualizarUsuario(usuario);
 
         App.setCuenta(cuenta);
         App.setUsuario(usuario);
+    }
+
+    @FXML
+    private void ModificarMovimiento() {
+        Movimiento seleccionado = tblMovimientos.getSelectionModel().getSelectedItem();
+        if (seleccionado != null) {
+            Double cantidad = Double.parseDouble(txtCantidad.getText());
+            String asunto = txtAsunto.getText();
+            Date fecha = java.sql.Date.valueOf(dtpFecha.getValue());
+            String tipo = txtTipo.getText();
+
+            seleccionado.setCantidad(cantidad);
+            seleccionado.setAsunto(asunto);
+            seleccionado.setTipo(tipo);
+            seleccionado.setFecha(fecha);
+
+            usuario.actualizarCuenta(cuenta);
+            controlMongo.ActualizarUsuario(usuario);
+
+            App.setCuenta(cuenta);
+            App.setUsuario(usuario);
+
+            tblMovimientos.refresh();
+        }
+    }
+
+    @FXML
+    private void EliminarMovimiento() {
+        Movimiento seleccionado = tblMovimientos.getSelectionModel().getSelectedItem();
+        if (seleccionado != null) {
+            ArrayList<Movimiento> listaMovimientos = cuenta.getHistorialMovimientos();
+            Movimiento movimiento = null;
+
+            for (Movimiento m : listaMovimientos) {
+                if (m.getId() ==  id) {
+                    movimiento = m;
+                    break;
+                }
+            }
+            listaMovimientos.remove(movimiento);
+            cuenta.setHistorialMovimientos(listaMovimientos);
+            usuario.actualizarCuenta(cuenta);
+            controlMongo.ActualizarUsuario(usuario);
+
+            App.setCuenta(cuenta);
+            App.setUsuario(usuario);
+
+            ObservableList<Movimiento> movimientosObservable = FXCollections.observableArrayList(cuenta.getHistorialMovimientos());
+            tblMovimientos.setItems(movimientosObservable);
+
+            tblMovimientos.refresh();
+        }
     }
 }
