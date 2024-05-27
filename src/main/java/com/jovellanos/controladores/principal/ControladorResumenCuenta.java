@@ -20,10 +20,12 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 
 public class ControladorResumenCuenta {
-
     private Usuario usuario = App.getUsuario();
     private Cuenta cuenta = App.getCuenta();
     private Tarjeta tarjeta = new Tarjeta();
+
+    private int paginaActual = 1;
+    private int tamañoPagina = 10;
 
     @FXML
     private TableView<Movimiento> tblMovimientos;
@@ -54,6 +56,12 @@ public class ControladorResumenCuenta {
 
     @FXML 
     private Label lblCaducidad;
+
+    @FXML
+    private Label lblPaginaActual;
+
+    @FXML
+    private Label lblTotalPaginas;
 
     @FXML
     private TableColumn<Movimiento, Double> colCantidad;
@@ -92,7 +100,6 @@ public class ControladorResumenCuenta {
     private ImageView imgSiguienteCuenta;
 
     public void initialize() {
-
         tarjeta = RastrearTarjeta("Primera");
 
         colCantidad.setCellValueFactory(new PropertyValueFactory<>("cantidad"));
@@ -100,12 +107,12 @@ public class ControladorResumenCuenta {
         colFecha.setCellValueFactory(new PropertyValueFactory<>("fecha"));
         colTipo.setCellValueFactory(new PropertyValueFactory<>("tipo"));
 
-        ObservableList<Movimiento> movimientosObservable = FXCollections.observableArrayList(cuenta.getHistorialMovimientos());
-        tblMovimientos.setItems(movimientosObservable);
-
         mostrarDatosTarjeta();
         mostrarDatosCuenta();
         escaladoFlechas();
+
+        mostrarPaginas();
+        actualizarTabla();
     }
 
     @FXML
@@ -113,8 +120,8 @@ public class ControladorResumenCuenta {
         cuenta = RastrearCuenta("Anterior");
         App.setCuenta(cuenta);
 
-        ObservableList<Movimiento> movimientosObservable = FXCollections.observableArrayList(cuenta.getHistorialMovimientos());
-        tblMovimientos.setItems(movimientosObservable);
+        mostrarPaginas();
+        actualizarTabla();
 
         tarjeta = RastrearTarjeta("Primera");
 
@@ -127,8 +134,8 @@ public class ControladorResumenCuenta {
         cuenta = RastrearCuenta("Siguiente");
         App.setCuenta(cuenta);
 
-        ObservableList<Movimiento> movimientosObservable = FXCollections.observableArrayList(cuenta.getHistorialMovimientos());
-        tblMovimientos.setItems(movimientosObservable);
+        mostrarPaginas();
+        actualizarTabla();
 
         tarjeta = RastrearTarjeta("Primera");
 
@@ -248,6 +255,41 @@ public class ControladorResumenCuenta {
             lblLimite.setText((String.valueOf("Limite Diario: " + tarjeta.getLimiteDiario())));
             lblPin.setText((String.valueOf("Codigo Pin: " + tarjeta.getPin())));
             lblCaducidad.setText((String.valueOf("Caduca el: " + tarjeta.getFechaCaducidad())));
+        }
+    }
+
+    private void actualizarTabla() {
+        int startIndex = (paginaActual - 1) * tamañoPagina;
+        int endIndex = Math.min(startIndex + tamañoPagina, cuenta.getHistorialMovimientos().size());
+        
+        ObservableList<Movimiento> movimientosPaginados = FXCollections.observableArrayList(cuenta.getHistorialMovimientos().subList(startIndex, endIndex));
+        tblMovimientos.setItems(movimientosPaginados);
+    }
+
+    private void mostrarPaginas() {
+        int totalPaginas = (int) Math.ceil((double) cuenta.getHistorialMovimientos().size() / tamañoPagina);
+        lblPaginaActual.setText(String.valueOf(paginaActual));
+        lblTotalPaginas.setText(String.valueOf(totalPaginas));
+    }
+    
+    @FXML
+    private void paginaAnterior() {
+        if (paginaActual > 1) {
+            paginaActual--;
+
+            actualizarTabla();
+            mostrarPaginas();
+        }
+    }
+    
+    @FXML
+    private void paginaSiguiente() {
+        int totalPaginas = (int) Math.ceil((double) cuenta.getHistorialMovimientos().size() / tamañoPagina);
+        if (paginaActual < totalPaginas) {
+            paginaActual++;
+
+            actualizarTabla();
+            mostrarPaginas();
         }
     }
 
