@@ -86,6 +86,9 @@ public class ControladorFormulario {
             alert.setContentText("Usuario duplicado.");
             alert.showAndWait();
 
+            TextFieldContraseña.clear();
+            TextFieldConfirmarPass.clear();
+
             return;
         }
 
@@ -96,6 +99,9 @@ public class ControladorFormulario {
             alert.setHeaderText(null);
             alert.setContentText("Las contraseñas no coinciden.");
             alert.showAndWait();
+
+            TextFieldContraseña.clear();
+            TextFieldConfirmarPass.clear();
 
             return;
         }
