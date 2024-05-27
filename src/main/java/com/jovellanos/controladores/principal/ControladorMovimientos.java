@@ -125,7 +125,7 @@ public class ControladorMovimientos {
 
         Double cantidad = Double.parseDouble(txtCantidad.getText());
         String asunto = txtAsunto.getText();
-        Date fecha = java.sql.Date.valueOf(dtpFecha.getValue());
+        Date fecha = Date.from(dtpFecha.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant());
         String tipo = txtTipo.getText();
 
         Movimiento nuevoMovimiento = new Movimiento(cantidad, asunto, fecha, tipo);
@@ -145,15 +145,18 @@ public class ControladorMovimientos {
     private void ModificarMovimiento() {
         Movimiento seleccionado = tblMovimientos.getSelectionModel().getSelectedItem();
         if (seleccionado != null) {
-            Double cantidad = Double.parseDouble(txtCantidad.getText());
+            Double cantidadAnterior = seleccionado.getCantidad();
+            Double cantidadNueva = Double.parseDouble(txtCantidad.getText());
             String asunto = txtAsunto.getText();
-            Date fecha = java.sql.Date.valueOf(dtpFecha.getValue());
+            Date fecha = Date.from(dtpFecha.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant());
             String tipo = txtTipo.getText();
 
-            seleccionado.setCantidad(cantidad);
+            seleccionado.setCantidad(cantidadNueva);
             seleccionado.setAsunto(asunto);
             seleccionado.setTipo(tipo);
             seleccionado.setFecha(fecha);
+
+            cuenta.setBalance(cuenta.getBalance() - cantidadAnterior + cantidadNueva);
 
             usuario.actualizarCuenta(cuenta);
             controlMongo.ActualizarUsuario(usuario);
@@ -169,26 +172,20 @@ public class ControladorMovimientos {
     private void EliminarMovimiento() {
         Movimiento seleccionado = tblMovimientos.getSelectionModel().getSelectedItem();
         if (seleccionado != null) {
-            ArrayList<Movimiento> listaMovimientos = cuenta.getHistorialMovimientos();
-            Movimiento movimiento = null;
-
-            for (Movimiento m : listaMovimientos) {
-                if (m.getId() ==  id) {
-                    movimiento = m;
-                    break;
-                }
-            }
-            listaMovimientos.remove(movimiento);
-            cuenta.setHistorialMovimientos(listaMovimientos);
+            Double cantidad = seleccionado.getCantidad();
+    
+            cuenta.setBalance(cuenta.getBalance() - cantidad);
+            cuenta.getHistorialMovimientos().remove(seleccionado);
+            
             usuario.actualizarCuenta(cuenta);
             controlMongo.ActualizarUsuario(usuario);
-
+    
             App.setCuenta(cuenta);
             App.setUsuario(usuario);
-
+    
             ObservableList<Movimiento> movimientosObservable = FXCollections.observableArrayList(cuenta.getHistorialMovimientos());
             tblMovimientos.setItems(movimientosObservable);
-
+    
             tblMovimientos.refresh();
         }
     }
