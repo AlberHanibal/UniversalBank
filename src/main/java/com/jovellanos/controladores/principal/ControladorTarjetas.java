@@ -20,6 +20,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
+import javafx.scene.paint.Color;
 
 public class ControladorTarjetas {
 
@@ -47,6 +48,9 @@ public class ControladorTarjetas {
 
     @FXML 
     private Label lblCaducidad;
+
+    @FXML
+    private Label lblEstado;
 
     @FXML
     private TextField txtNumero;
@@ -98,6 +102,18 @@ public class ControladorTarjetas {
 
     @FXML
     private Button btnAnteriorTarjeta;
+
+    @FXML
+    private Button btnCancelar;
+
+    @FXML
+    private Button btnReactivar;
+
+    @FXML
+    private Button btnBloquear;
+
+    @FXML
+    private Button btnDesbloquear;
 
     @FXML
     private ImageView imgSiguienteTarjeta;
@@ -174,45 +190,41 @@ public class ControladorTarjetas {
 
     @FXML
     private void CancelarTarjeta() {
-        tarjeta = tblTarjetas.getSelectionModel().getSelectedItem();
 
         if (tarjeta != null) {
             tarjeta.setCancelada(true);
 
-            tblTarjetas.refresh();
+            mostrarDatosTarjeta();
         }
     }
 
     @FXML
     private void ReactivarTarjeta() {
-        tarjeta = tblTarjetas.getSelectionModel().getSelectedItem();
 
         if (tarjeta != null) {
             tarjeta.setCancelada(false);
 
-            tblTarjetas.refresh();
+            mostrarDatosTarjeta();
         }
     }
 
     @FXML
     private void BloquearTarjeta() {
-        tarjeta = tblTarjetas.getSelectionModel().getSelectedItem();
 
         if (tarjeta != null) {
             tarjeta.setBloqueada(true);
 
-            tblTarjetas.refresh();
+            mostrarDatosTarjeta();
         }
     }
 
     @FXML
     private void DesbloquearTarjeta() {
-        tarjeta = tblTarjetas.getSelectionModel().getSelectedItem();
 
         if (tarjeta != null) {
             tarjeta.setBloqueada(false);
 
-            tblTarjetas.refresh();
+            mostrarDatosTarjeta();
         }
     }
 
@@ -278,6 +290,7 @@ public class ControladorTarjetas {
             lblLimite.setText("");
             lblPin.setText("");
             lblCaducidad.setText("");
+            lblEstado.setText("");
         } else {
             // Si hay tarjetas, mostrar los detalles de la tarjeta actual
             lblIDTarjeta.setText(String.valueOf("ID: " + tarjeta.getId()));
@@ -287,6 +300,34 @@ public class ControladorTarjetas {
             lblLimite.setText((String.valueOf("Limite Diario: " + tarjeta.getLimiteDiario())));
             lblPin.setText((String.valueOf("Codigo Pin: " + tarjeta.getPin())));
             lblCaducidad.setText((String.valueOf("Caduca el: " + tarjeta.getFechaCaducidad())));
+
+            if (tarjeta.isBloqueada()) {
+                btnBloquear.setVisible(false);
+                btnDesbloquear.setVisible(true);
+                btnCancelar.setVisible(false);
+                btnReactivar.setVisible(false);
+
+                lblEstado.setText(String.valueOf("Estado: Bloqueada"));
+                lblEstado.setTextFill(Color.RED);
+            } else {
+                if (tarjeta.isCancelada()) {
+                    btnBloquear.setVisible(false);
+                    btnDesbloquear.setVisible(false);
+                    btnCancelar.setVisible(false);
+                    btnReactivar.setVisible(true);
+
+                    lblEstado.setText(String.valueOf("Estado: Cancelada"));
+                    lblEstado.setTextFill(Color.RED);
+                } else {
+                    btnBloquear.setVisible(true);
+                    btnDesbloquear.setVisible(false);
+                    btnCancelar.setVisible(true);
+                    btnReactivar.setVisible(false);
+
+                    lblEstado.setText(String.valueOf("Estado: Activa"));
+                    lblEstado.setTextFill(Color.BLACK);
+                }
+            }
         }
     }
 
