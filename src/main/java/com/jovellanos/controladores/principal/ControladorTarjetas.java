@@ -12,6 +12,7 @@ import com.jovellanos.modelo.Usuario;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -48,9 +49,6 @@ public class ControladorTarjetas {
     private Label lblCaducidad;
 
     @FXML
-    private TextField txtTipo;
-
-    @FXML
     private TextField txtNumero;
 
     @FXML
@@ -61,6 +59,9 @@ public class ControladorTarjetas {
 
     @FXML
     private TextField txtLimite;
+
+    @FXML 
+    private ComboBox<String> cmbTipo;
 
     @FXML
     private DatePicker dtpCaducidad;
@@ -112,11 +113,8 @@ public class ControladorTarjetas {
         mostrarDatosTarjeta();
         escaladoFlechas();
 
-        txtTipo.setOnKeyPressed(event -> {
-            if (event.getCode() == KeyCode.ENTER) {
-                NuevaTarjeta();
-            }
-        });
+        cmbTipo.getItems().addAll("Credito", "Debito");
+        cmbTipo.getSelectionModel().selectFirst();
 
         txtNumero.setOnKeyPressed(event -> {
             if (event.getCode() == KeyCode.ENTER) {
@@ -151,7 +149,7 @@ public class ControladorTarjetas {
 
     @FXML
     private void NuevaTarjeta() {
-        if (txtLimite.getText().isEmpty() || dtpCaducidad.getValue() == null || txtTipo.getText().isEmpty() || 
+        if (txtLimite.getText().isEmpty() || dtpCaducidad.getValue() == null || 
             txtNumero.getText().isEmpty() || txtCVV.getText().isEmpty() || txtPin.getText().isEmpty()) {
             return;
         }
@@ -162,7 +160,7 @@ public class ControladorTarjetas {
         Double limit = Double.parseDouble(txtLimite.getText());
         Date fechaCaducidad = java.sql.Date.valueOf(dtpCaducidad.getValue());
 
-        Tarjeta nuevaTarjeta = new Tarjeta(id, txtTipo.getText(), txtNumero.getText(), txtCVV.getText(), limit, txtPin.getText(), fechaCaducidad);
+        Tarjeta nuevaTarjeta = new Tarjeta(id, cmbTipo.getValue(), txtNumero.getText(), txtCVV.getText(), limit, txtPin.getText(), fechaCaducidad);
 
         cuenta.getListaTarjetas().add(nuevaTarjeta);
         usuario.actualizarCuenta(cuenta);

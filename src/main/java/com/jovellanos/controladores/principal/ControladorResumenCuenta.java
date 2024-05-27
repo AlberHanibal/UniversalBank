@@ -150,6 +150,11 @@ public class ControladorResumenCuenta {
         mostrarDatosTarjeta();
     }
 
+    @FXML
+    private void VerTodosMovimientos() {
+        
+    }
+
     private Cuenta RastrearCuenta(String buscada) { // Iteramos sobre la lista de cuentas, para determinar cual es la siguiente o anterior cuenta.
         List<Cuenta> listaCuentas = usuario.getListaCuentas();
         if (listaCuentas.size() <= 1) {
