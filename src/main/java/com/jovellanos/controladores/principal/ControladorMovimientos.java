@@ -2,7 +2,6 @@ package com.jovellanos.controladores.principal;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
-import java.util.ArrayList;
 import java.util.Date;
 
 import com.jovellanos.App;
@@ -61,9 +60,20 @@ public class ControladorMovimientos {
 
         colId.setCellValueFactory(new PropertyValueFactory<>("id"));
         colCantidad.setCellValueFactory(new PropertyValueFactory<>("cantidad"));
+        colCantidad.setReorderable(false);
+        colCantidad.setResizable(false);
+
         colAsunto.setCellValueFactory(new PropertyValueFactory<>("asunto"));
+        colAsunto.setReorderable(false);
+        colAsunto.setResizable(false);
+
         colFecha.setCellValueFactory(new PropertyValueFactory<>("fecha"));
+        colFecha.setReorderable(false);
+        colFecha.setResizable(false);
+
         colTipo.setCellValueFactory(new PropertyValueFactory<>("tipo"));
+        colTipo.setReorderable(false);
+        colTipo.setResizable(false);
 
         ObservableList<Movimiento> movimientosObservable = FXCollections.observableArrayList(cuenta.getHistorialMovimientos());
         tblMovimientos.setItems(movimientosObservable);

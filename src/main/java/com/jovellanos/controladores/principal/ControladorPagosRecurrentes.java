@@ -68,11 +68,28 @@ public class ControladorPagosRecurrentes {
 
     public void initialize() {
         colCantidadTotal.setCellValueFactory(new PropertyValueFactory<>("cantidadTotal"));
+        colCantidadTotal.setReorderable(false);
+        colCantidadTotal.setResizable(false);
+        
         colCantidadPagada.setCellValueFactory(new PropertyValueFactory<>("cantidadPagada"));
+        colCantidadPagada.setReorderable(false);
+        colCantidadPagada.setResizable(false);
+
         colCantidadRestante.setCellValueFactory(new PropertyValueFactory<>("cantidadRestante"));
+        colCantidadRestante.setReorderable(false);
+        colCantidadRestante.setResizable(false);
+
         colDineroPlazo.setCellValueFactory(new PropertyValueFactory<>("plazosDinero"));
+        colDineroPlazo.setReorderable(false);
+        colDineroPlazo.setResizable(false);
+
         colProximoPlazo.setCellValueFactory(new PropertyValueFactory<>("fechaSiguientePago"));
+        colProximoPlazo.setReorderable(false);
+        colProximoPlazo.setResizable(false);
+
         colCantidadTotal1.setCellValueFactory(new PropertyValueFactory<>("tipo"));
+        colCantidadTotal1.setReorderable(false);
+        colCantidadTotal1.setResizable(false);
 
         ObservableList<GastosPeriodicos> PagosRecurrentesObservable = FXCollections.observableArrayList(cuenta.getListaGastos());
         tblPagosRecorrentes.setItems(PagosRecurrentesObservable);

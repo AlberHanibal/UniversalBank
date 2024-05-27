@@ -103,9 +103,20 @@ public class ControladorResumenCuenta {
         tarjeta = RastrearTarjeta("Primera");
 
         colCantidad.setCellValueFactory(new PropertyValueFactory<>("cantidad"));
+        colCantidad.setReorderable(false);
+        colCantidad.setResizable(false);
+
         colAsunto.setCellValueFactory(new PropertyValueFactory<>("asunto"));
+        colAsunto.setReorderable(false);
+        colAsunto.setResizable(false);
+
         colFecha.setCellValueFactory(new PropertyValueFactory<>("fecha"));
+        colFecha.setReorderable(false);
+        colFecha.setResizable(false);
+
         colTipo.setCellValueFactory(new PropertyValueFactory<>("tipo"));
+        colTipo.setReorderable(false);
+        colTipo.setResizable(false);
 
         mostrarDatosTarjeta();
         mostrarDatosCuenta();
