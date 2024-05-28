@@ -106,6 +106,20 @@ public class ControladorFormulario {
             return;
         }
 
+        // Se comprueba la robustez de la contraseña
+        if (!comprobarContraseña(contraseña)) {
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("La contraseña necesita tener al menos: \n- Una longitud minima de 8 caracteres \n- Un número \n- Una mayuscula  \n- Un simbolo(!, @, #, $, %...).");
+            alert.showAndWait();
+
+            TextFieldContraseña.clear();
+            TextFieldConfirmarPass.clear();
+
+            return;
+        }
+
         ArrayList<Cuenta> lista = new ArrayList<Cuenta>();
         Usuario u = new Usuario(username, contraseña, lista, nombre, apellidos);
 
@@ -117,5 +131,29 @@ public class ControladorFormulario {
     @FXML
     private void Cancelar() {
         App.getScene().setRoot(App.cargarEscena("fxml/Login.fxml"));
+    }
+
+    private boolean comprobarContraseña(String contraseña) {
+        // Longitud mínima de 8 caracteres
+        if (contraseña.length() < 8) {
+            return false;
+        }
+    
+        // Al menos un número
+        if (!contraseña.matches(".*\\d.*")) {
+            return false;
+        }
+    
+        // Al menos una mayúscula
+        if (!contraseña.matches(".*[A-Z].*")) {
+            return false;
+        }
+    
+        // Al menos un símbolo
+        if (!contraseña.matches(".*[!@#$%^&*()].*")) {
+            return false;
+        }
+    
+        return true;
     }
 }

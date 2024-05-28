@@ -40,7 +40,7 @@ public class ControladorLogin {
             App.getScene().getWindow().setHeight(400);
         }
 
-        if (!controlMongo.ComprobarUsuario("Administrador")) {
+        if (!controlMongo.ComprobarUsuario("usuario") && !controlMongo.ComprobarUsuario("a")) {
             CrearGrupoUsuarios();
         }
 
