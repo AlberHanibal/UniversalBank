@@ -24,7 +24,6 @@ public class ControladorMovimientos {
     ControladorMongoDB controlMongo = new ControladorMongoDB();
     private Usuario usuario = App.getUsuario();
     private Cuenta cuenta = App.getCuenta();
-    private int id = 0;
     
     @FXML
     private TextField txtCantidad;
@@ -57,8 +56,6 @@ public class ControladorMovimientos {
     private TableColumn<Movimiento, String> colTipo;
 
     public void initialize() {
-
-        colId.setCellValueFactory(new PropertyValueFactory<>("id"));
         colCantidad.setCellValueFactory(new PropertyValueFactory<>("cantidad"));
         colCantidad.setReorderable(false);
         colCantidad.setResizable(false);
@@ -104,7 +101,6 @@ public class ControladorMovimientos {
 
         tblMovimientos.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null) {
-                id = newValue.getId();
                 txtCantidad.setText(newValue.getCantidad().toString());
                 txtAsunto.setText(newValue.getAsunto());
                 txtTipo.setText(newValue.getTipo());
@@ -117,7 +113,6 @@ public class ControladorMovimientos {
                 }
             } else {
                 // Si no hay ningún elemento seleccionado, limpiar los campos de texto
-                id = 0;
                 txtCantidad.clear();
                 txtAsunto.clear();
                 txtTipo.clear();

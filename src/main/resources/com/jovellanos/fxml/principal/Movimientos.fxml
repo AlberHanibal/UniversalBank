@@ -19,7 +19,6 @@
    <children>
       <TableView fx:id="tblMovimientos" layoutX="14.0" layoutY="17.0" prefHeight="333.0" prefWidth="634.0">
          <columns>
-            <TableColumn fx:id="colId" prefWidth="114.0" text="Id" visible="false" />
             <TableColumn fx:id="colTipo" prefWidth="114.0" text="Tipo" />
             <TableColumn fx:id="colAsunto" prefWidth="258.0" text="Asunto" />
             <TableColumn fx:id="colFecha" minWidth="0.0" prefWidth="153.0" text="Fecha" />
