@@ -21,8 +21,8 @@
          <columns>
             <TableColumn fx:id="colTipo" prefWidth="114.0" text="Tipo" />
             <TableColumn fx:id="colAsunto" prefWidth="258.0" text="Asunto" />
-            <TableColumn fx:id="colFecha" minWidth="0.0" prefWidth="153.0" text="Fecha" />
             <TableColumn fx:id="colCantidad" prefWidth="108.0" text="Cantidad" />
+            <TableColumn fx:id="colFecha" minWidth="0.0" prefWidth="153.0" text="Fecha" />
          </columns>
       </TableView>
       <Pane layoutX="37.0" layoutY="363.0" prefHeight="197.0" prefWidth="731.0">

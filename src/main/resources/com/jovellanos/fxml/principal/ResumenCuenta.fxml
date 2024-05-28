@@ -19,10 +19,10 @@
    <children>
       <TableView fx:id="tblMovimientos" layoutX="39.0" layoutY="256.0" prefHeight="301.0" prefWidth="568.0">
         <columns>
-          <TableColumn fx:id="colCantidad" prefWidth="110.0" text="Cantidad" />
-            <TableColumn fx:id="colAsunto" prefWidth="190.0" text="Asunto" />
-            <TableColumn fx:id="colFecha" minWidth="0.0" prefWidth="153.0" text="Fecha" />
             <TableColumn fx:id="colTipo" prefWidth="114.0" text="Tipo" />
+            <TableColumn fx:id="colAsunto" prefWidth="190.0" text="Asunto" />
+          <TableColumn fx:id="colCantidad" prefWidth="110.0" text="Cantidad" />
+            <TableColumn fx:id="colFecha" minWidth="0.0" prefWidth="153.0" text="Fecha" />
         </columns>
       </TableView>
       <Pane layoutX="33.0" layoutY="14.0" prefHeight="215.0" prefWidth="463.0" styleClass="card">

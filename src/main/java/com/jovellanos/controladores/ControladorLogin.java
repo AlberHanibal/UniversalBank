@@ -111,8 +111,8 @@ public class ControladorLogin {
     }
 
     private void CrearGrupoUsuarios() {
-        String username = "Usuario";
-        String contraseña = "Usuario";
+        String username = "usuario";
+        String contraseña = "usuario";
         String nombre = "Julián";
         String apellidos = "Palacios García";
         String direccion = "c/ De la Programación 14 2ºB";
