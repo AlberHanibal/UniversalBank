@@ -419,6 +419,8 @@ public class ControladorLogin {
             Date fechaSiguientePago = dateFormat.parse("1/6/2024");
 
             GastosPeriodicos gastoPeriodico = new GastosPeriodicos(100000.0, fechaInicio, "Hipoteca", fechaSiguientePago, 506.69, 4.5, 360);
+            gastoPeriodico.setCantidadPagada(1013.38);
+            gastoPeriodico.setCantidadRestante(98986.62);
 
             listaGastos.add(gastoPeriodico);
         } catch (ParseException e) {
