@@ -39,12 +39,13 @@ public class ControladorPrincipal {
     private SubScene sceneCentral;
 
     private void cambiarCentral(String fichero) {
-        sceneCentral.setRoot(App.cargarEscena(fichero));
+        App.cambiarEscenaCentral(fichero);
     }
 
     public void initialize() {
         App.getScene().getWindow().setWidth(1300);
         App.getScene().getWindow().setHeight(750);
+        App.setSubSceneCentral(sceneCentral);
 
         for (Cuenta c : usuario.getListaCuentas()) {
             if (c.getHistorialMovimientos().isEmpty()) {

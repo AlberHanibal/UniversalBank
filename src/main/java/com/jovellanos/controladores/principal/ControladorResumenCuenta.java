@@ -170,7 +170,7 @@ public class ControladorResumenCuenta {
 
     @FXML
     private void VerTodosMovimientos() {
-        
+        App.cambiarEscenaCentral("fxml/principal/Movimientos.fxml");
     }
 
     private Cuenta RastrearCuenta(String buscada) { // Iteramos sobre la lista de cuentas, para determinar cual es la siguiente o anterior cuenta.

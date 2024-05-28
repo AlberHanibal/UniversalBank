@@ -89,11 +89,13 @@ public class ControladorFormularioPerfil {
 
         App.setUsuario(usuario);
         App.getScene().setRoot(App.cargarEscena("fxml/principal/Principal.fxml"));
+        App.cambiarEscenaCentral("fxml/principal/Perfil.fxml");
     }
 
     @FXML
     private void Cancelar() {
         App.getScene().setRoot(App.cargarEscena("fxml/principal/Principal.fxml"));
+        App.cambiarEscenaCentral("fxml/principal/Perfil.fxml");
     }
 
     private void mostrarDatosPerfil() {
