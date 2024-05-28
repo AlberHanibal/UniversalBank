@@ -1,4 +1,5 @@
 package com.jovellanos.controladores.principal;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -15,10 +16,12 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.util.Callback;
 
 public class ControladorPagosRecurrentes {
     private Usuario usuario = App.getUsuario();
@@ -90,6 +93,24 @@ public class ControladorPagosRecurrentes {
         colCantidadTotal1.setCellValueFactory(new PropertyValueFactory<>("tipo"));
         colCantidadTotal1.setReorderable(false);
         colCantidadTotal1.setResizable(false);
+
+        colProximoPlazo.setCellFactory(new Callback<TableColumn<GastosPeriodicos, Date>, TableCell<GastosPeriodicos, Date>>() {
+            @Override
+            public TableCell<GastosPeriodicos, Date> call(TableColumn<GastosPeriodicos, Date> param) {
+                return new TableCell<GastosPeriodicos, Date>() {
+                    @Override
+                    protected void updateItem(Date item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (empty || item == null) {
+                            setText(null);
+                        } else {
+                            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+                            setText(dateFormat.format(item));
+                        }
+                    }
+                };
+            }
+        });
 
         ObservableList<GastosPeriodicos> PagosRecurrentesObservable = FXCollections.observableArrayList(cuenta.getListaGastos());
         tblPagosRecorrentes.setItems(PagosRecurrentesObservable);

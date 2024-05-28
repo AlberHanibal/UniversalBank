@@ -1,5 +1,6 @@
 package com.jovellanos.controladores.principal;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
@@ -14,11 +15,13 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyCode;
+import javafx.util.Callback;
 
 public class ControladorMovimientos {
     ControladorMongoDB controlMongo = new ControladorMongoDB();
@@ -71,6 +74,24 @@ public class ControladorMovimientos {
         colTipo.setCellValueFactory(new PropertyValueFactory<>("tipo"));
         colTipo.setReorderable(false);
         colTipo.setResizable(false);
+
+        colFecha.setCellFactory(new Callback<TableColumn<Movimiento, Date>, TableCell<Movimiento, Date>>() {
+            @Override
+            public TableCell<Movimiento, Date> call(TableColumn<Movimiento, Date> param) {
+                return new TableCell<Movimiento, Date>() {
+                    @Override
+                    protected void updateItem(Date item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (empty || item == null) {
+                            setText(null);
+                        } else {
+                            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+                            setText(dateFormat.format(item));
+                        }
+                    }
+                };
+            }
+        });
 
         ObservableList<Movimiento> movimientosObservable = FXCollections.observableArrayList(cuenta.getHistorialMovimientos());
         tblMovimientos.setItems(movimientosObservable);

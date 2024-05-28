@@ -1,5 +1,6 @@
 package com.jovellanos.controladores.principal;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -14,10 +15,12 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
+import javafx.util.Callback;
 
 public class ControladorResumenCuenta {
     private Usuario usuario = App.getUsuario();
@@ -117,6 +120,24 @@ public class ControladorResumenCuenta {
         colTipo.setCellValueFactory(new PropertyValueFactory<>("tipo"));
         colTipo.setReorderable(false);
         colTipo.setResizable(false);
+
+        colFecha.setCellFactory(new Callback<TableColumn<Movimiento, Date>, TableCell<Movimiento, Date>>() {
+            @Override
+            public TableCell<Movimiento, Date> call(TableColumn<Movimiento, Date> param) {
+                return new TableCell<Movimiento, Date>() {
+                    @Override
+                    protected void updateItem(Date item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (empty || item == null) {
+                            setText(null);
+                        } else {
+                            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+                            setText(dateFormat.format(item));
+                        }
+                    }
+                };
+            }
+        });
 
         mostrarDatosTarjeta();
         mostrarDatosCuenta();
