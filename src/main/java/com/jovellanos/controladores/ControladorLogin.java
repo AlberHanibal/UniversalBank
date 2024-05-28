@@ -7,16 +7,22 @@ import com.jovellanos.modelo.Usuario;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 
 public class ControladorLogin {
 
     @FXML
-    private TextField TextFieldUsuario;
+    private TextField txtUsuario;
 
     @FXML
-    private TextField TextFieldContraseña;
+    private TextField txtContraseña;
+
+    @FXML
+    private PasswordField pswContraseña;
+
+    private boolean mostrarContraseña = false;
 
     public void initialize() {
         if (App.getScene() != null) {
@@ -24,13 +30,19 @@ public class ControladorLogin {
             App.getScene().getWindow().setHeight(400);
         }
 
-        TextFieldUsuario.setOnKeyPressed(event -> {
+        txtUsuario.setOnKeyPressed(event -> {
             if (event.getCode() == KeyCode.ENTER) {
                 Continuar();
             }
         });
 
-        TextFieldContraseña.setOnKeyPressed(event -> {
+        pswContraseña.setOnKeyPressed(event -> {
+            if (event.getCode() == KeyCode.ENTER) {
+                Continuar();
+            }
+        });
+
+        txtContraseña.setOnKeyPressed(event -> {
             if (event.getCode() == KeyCode.ENTER) {
                 Continuar();
             }
@@ -39,8 +51,8 @@ public class ControladorLogin {
 
     @FXML
     private void Continuar() {
-        String username = TextFieldUsuario.getText();
-        String contraseña = TextFieldContraseña.getText();
+        String username = txtUsuario.getText();
+        String contraseña = mostrarContraseña ? txtContraseña.getText() : pswContraseña.getText();
 
         ControladorMongoDB ControlMongo = new ControladorMongoDB();
         Boolean existe = ControlMongo.ComprobarUsuarioYContraseña(username, contraseña);
@@ -63,5 +75,24 @@ public class ControladorLogin {
     @FXML
     private void CrearUsuario() {
         App.getScene().setRoot(App.cargarEscena("fxml/Formulario.fxml"));
+    }
+
+    @FXML
+    private void mostrarContraseña() {
+        mostrarContraseña = !mostrarContraseña;
+
+        if (mostrarContraseña) {
+            txtContraseña.setText(pswContraseña.getText());
+            txtContraseña.setVisible(true);
+            txtContraseña.setManaged(true);
+            pswContraseña.setVisible(false);
+            pswContraseña.setManaged(false);
+        } else {
+            pswContraseña.setText(txtContraseña.getText());
+            pswContraseña.setVisible(true);
+            pswContraseña.setManaged(true);
+            txtContraseña.setVisible(false);
+            txtContraseña.setManaged(false);
+        }
     }
 }
