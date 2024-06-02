@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -15,9 +11,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="1100.0" prefHeight="600.0" prefWidth="1200.0" styleClass="fondo" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jovellanos.controladores.principal.ControladorResumenCuenta">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="1100.0" prefHeight="600.0" prefWidth="1200.0" styleClass="fondo" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jovellanos.controladores.principal.ControladorResumenCuenta">
    <children>
-      <TableView fx:id="tblMovimientos" layoutX="39.0" layoutY="256.0" prefHeight="301.0" prefWidth="568.0">
+      <TableView fx:id="tblMovimientos" layoutX="39.0" layoutY="243.0" prefHeight="257.0" prefWidth="568.0">
         <columns>
             <TableColumn fx:id="colTipo" prefWidth="114.0" text="Tipo" />
             <TableColumn fx:id="colAsunto" prefWidth="190.0" text="Asunto" />
@@ -122,15 +118,11 @@
             </Button>
          </children>
       </Pane>
-      <Button layoutX="607.0" layoutY="256.0" mnemonicParsing="false" onAction="#VerTodosMovimientos" prefHeight="20.0" prefWidth="66.0" text="Ver todos">
-         <font>
-            <Font size="10.0" />
-         </font>
-      </Button>
-      <Button layoutX="607.0" layoutY="532.0" mnemonicParsing="false" onAction="#paginaAnterior" text="Anterior" />
-      <Button layoutX="805.0" layoutY="532.0" mnemonicParsing="false" onAction="#paginaSiguiente" text="Siguiente" />
-      <Label fx:id="lblPaginaActual" layoutX="718.0" layoutY="536.0" text="0" />
-      <Label fx:id="lblTotalPaginas" layoutX="769.0" layoutY="536.0" text="10" />
-      <Label layoutX="736.0" layoutY="536.0" text=" de " />
+      <Button layoutX="164.0" layoutY="508.0" mnemonicParsing="false" onAction="#paginaAnterior" text="Anterior" />
+      <Button layoutX="362.0" layoutY="508.0" mnemonicParsing="false" onAction="#paginaSiguiente" text="Siguiente" />
+      <Label fx:id="lblPaginaActual" layoutX="281.0" layoutY="520.0" text="0" />
+      <Label fx:id="lblTotalPaginas" layoutX="332.0" layoutY="520.0" text="10" />
+      <Label layoutX="299.0" layoutY="520.0" text=" de " />
+      <Hyperlink layoutX="611.0" layoutY="252.0" onAction="#VerTodosMovimientos" text="Ver todos" />
    </children>
 </AnchorPane>

@@ -46,6 +46,13 @@
 
 }
 
+.nobutton {
+    -fx-background-color: transparent;
+}
+
+.nobutton:hover {
+    -fx-background-color: transparent;
+}
 .cancelar {
     -fx-background-color: -cancelar;
     -fx-text-fill: black;
