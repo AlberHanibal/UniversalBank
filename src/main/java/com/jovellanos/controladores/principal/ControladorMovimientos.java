@@ -2,10 +2,21 @@ package com.jovellanos.controladores.principal;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.YearMonth;
 import java.time.ZoneId;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.FileWriter;
+import java.io.IOException;
+import java.lang.Math;
+
 import com.jovellanos.App;
+import com.jovellanos.ControladorInformes;
 import com.jovellanos.ControladorMongoDB;
 import com.jovellanos.modelo.Cuenta;
 import com.jovellanos.modelo.Movimiento;
@@ -28,6 +39,7 @@ public class ControladorMovimientos {
     private Usuario usuario = App.getUsuario();
     private Cuenta cuenta = App.getCuenta();
     
+    private final static ArrayList<String> nombreMeses = new ArrayList<String>(Arrays.asList("ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"));
     @FXML
     private TextField txtCantidad;
 
@@ -214,5 +226,63 @@ public class ControladorMovimientos {
     
             tblMovimientos.refresh();
         }
+    }
+
+    @FXML
+    private void generarInforme() {
+        crearJSONMovimientos();
+        ControladorInformes.generarInforme();
+    }
+
+    private void crearJSONMovimientos() {
+        ArrayList<YearMonth> listaMeses = generarUltimos12Meses();
+        ArrayList<Movimiento> listaMovimientos = cuenta.getHistorialMovimientos();
+        YearMonth fechaComparar;
+        LocalDate fechaMovimiento;
+        double ingresos;
+        double gastos;
+        JSONArray mesesArray = new JSONArray();
+        for (YearMonth yearMonth : listaMeses) {
+            JSONObject itemJSON = new JSONObject();
+            ingresos = 0;
+            gastos = 0;
+            for (Movimiento movimiento : listaMovimientos) {
+                fechaMovimiento = movimiento.getFecha().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+                fechaComparar = YearMonth.of(fechaMovimiento.getYear(), fechaMovimiento.getMonthValue());
+                if (yearMonth.equals(fechaComparar)) {
+                    if (movimiento.getCantidad() >= 0) {
+                        ingresos += movimiento.getCantidad();
+                    } else {
+                        gastos += Math.abs(movimiento.getCantidad());
+                    }
+                }
+            }
+            if (yearMonth.getMonthValue() == 12 || yearMonth.getMonthValue() == 1) {
+                itemJSON.put("mes", nombreMeses.get(yearMonth.getMonthValue() - 1) + "-" + yearMonth.getYear());
+            } else {
+                itemJSON.put("mes", nombreMeses.get(yearMonth.getMonthValue() - 1));
+            }
+            itemJSON.put("ingresos", ingresos);
+            itemJSON.put("gastos", gastos);
+            mesesArray.put(itemJSON);
+        }
+
+        try (FileWriter file = new FileWriter("./meses.json")) {
+            file.write(mesesArray.toString(4)); // '4' para indentación y hacer el JSON más legible
+            file.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.err.println("Fallo al escribir el JSON de los movimientos.");
+        }
+    }
+
+    private ArrayList<YearMonth> generarUltimos12Meses() {
+        ArrayList<YearMonth> listaMeses = new ArrayList<YearMonth>();
+        LocalDate fecha = LocalDate.now();
+        for (int i = 1; i <= 12; i++) {
+            listaMeses.add(0, (YearMonth.of(fecha.getYear(), fecha.getMonthValue())));
+            fecha = fecha.minusMonths(1);
+        }
+        return listaMeses;
     }
 }
