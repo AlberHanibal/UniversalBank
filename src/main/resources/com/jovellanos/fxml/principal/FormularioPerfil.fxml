@@ -95,13 +95,13 @@
                      </font>
                   </Label>
                   <TextField fx:id="TextFieldDireccion" layoutX="31.0" layoutY="78.0" prefHeight="30.0" prefWidth="267.0" styleClass="inputs" />
-                  <Label layoutX="31.0" layoutY="112.0" text="Telefono">
+                  <Label layoutX="31.0" layoutY="112.0" text="Teléfono">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
                   <TextField fx:id="TextFieldTelefono" layoutX="31.0" layoutY="132.0" prefHeight="30.0" prefWidth="267.0" styleClass="inputs" />
-                  <Label layoutX="31.0" layoutY="168.0" text="Correo Electronico">
+                  <Label layoutX="31.0" layoutY="168.0" text="Correo Electrónico">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>

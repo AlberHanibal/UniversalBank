@@ -129,7 +129,7 @@ public class ControladorTarjetas {
         mostrarDatosTarjeta();
         escaladoFlechas();
 
-        cmbTipo.getItems().addAll("Credito", "Debito");
+        cmbTipo.getItems().addAll("Crédito", "Débito");
         cmbTipo.getSelectionModel().selectFirst();
 
         txtNumero.setOnKeyPressed(event -> {

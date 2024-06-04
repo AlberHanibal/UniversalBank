@@ -23,19 +23,19 @@
       </TableView>
       <Pane layoutX="37.0" layoutY="363.0" prefHeight="197.0" prefWidth="731.0">
          <children>
+            <Label layoutX="14.0" layoutY="34.0" prefHeight="20.0" prefWidth="79.0" text="Cantidad" />
+            <TextField fx:id="txtCantidad" layoutX="93.0" layoutY="29.0" styleClass="inputs" />
+            <Label layoutX="341.0" layoutY="34.0" prefHeight="20.0" prefWidth="66.0" text="Asunto" />
+            <TextField fx:id="txtAsunto" layoutX="504.0" layoutY="29.0" styleClass="inputs" />
+            <Label layoutX="14.0" layoutY="86.0" prefHeight="20.0" prefWidth="54.0" text="Fecha" />
+            <DatePicker fx:id="dtpFecha" layoutX="90.0" layoutY="81.0" />
+            <Label layoutX="341.0" layoutY="86.0" prefHeight="20.0" prefWidth="170.0" text="Tipo de movimiento" />
+            <TextField fx:id="txtTipo" layoutX="505.0" layoutY="81.0" styleClass="inputs" />
             <Button alignment="CENTER" layoutX="502.0" layoutY="137.0" minHeight="39.0" minWidth="110.0" mnemonicParsing="false" onAction="#NuevoMovimiento" text="Nuevo Movimiento">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Label layoutX="341.0" layoutY="86.0" prefHeight="20.0" prefWidth="170.0" text="Tipo de movimiento" />
-            <TextField fx:id="txtTipo" layoutX="505.0" layoutY="81.0" styleClass="inputs" />
-            <TextField fx:id="txtAsunto" layoutX="504.0" layoutY="29.0" styleClass="inputs" />
-            <Label layoutX="341.0" layoutY="34.0" prefHeight="20.0" prefWidth="66.0" text="Asunto" />
-            <Label layoutX="14.0" layoutY="86.0" prefHeight="20.0" prefWidth="54.0" text="Fecha" />
-            <DatePicker fx:id="dtpFecha" layoutX="90.0" layoutY="81.0" />
-            <Label layoutX="14.0" layoutY="34.0" prefHeight="20.0" prefWidth="79.0" text="Cantidad" />
-            <TextField fx:id="txtCantidad" layoutX="93.0" layoutY="29.0" styleClass="inputs" />
          </children>
          <styleClass>
             <String fx:value="card" />
@@ -52,6 +52,6 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="botonInforme" layoutX="684.0" layoutY="245.0" mnemonicParsing="false" onAction="#generarInforme" text="Generar informe" />
+      <Button fx:id="botonInforme" layoutX="684.0" layoutY="245.0" mnemonicParsing="false" onAction="#generarInforme" text="Generar Informe" />
    </children>
 </AnchorPane>

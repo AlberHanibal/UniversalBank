@@ -16,22 +16,17 @@
    <children>
       <Pane layoutX="21.0" layoutY="271.0" prefHeight="291.0" prefWidth="795.0">
          <children>
-            <Button alignment="CENTER" layoutX="621.0" layoutY="229.0" minHeight="39.0" minWidth="110.0" mnemonicParsing="false" onAction="#NuevoPagoMensual" text="Nuevo Pago">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Button>
             <Label layoutX="21.0" layoutY="24.0" prefHeight="20.0" prefWidth="160.0" text="Total a pagar (€)" />
             <TextField fx:id="txtCantidadTotal" layoutX="181.0" layoutY="19.0" styleClass="inputs" />
-            <Label layoutX="21.0" layoutY="197.0" prefHeight="20.0" prefWidth="145.0" text="Dinero por plazo" />
-            <TextField fx:id="txtPlazosDinero" editable="false" layoutX="181.0" layoutY="194.0" styleClass="inputs" />
-            <Label layoutX="21.0" layoutY="157.0" prefHeight="20.0" prefWidth="176.0" text="Tasa interés anual" />
-            <TextField fx:id="txtInteresAnual" layoutX="181.0" layoutY="152.0" styleClass="inputs" />
             <Label layoutX="21.0" layoutY="69.0" prefHeight="20.0" prefWidth="95.0" text="A pagar en" />
             <TextField fx:id="txtPlazos" layoutX="181.0" layoutY="64.0" styleClass="inputs" />
+            <ComboBox fx:id="cmbPlazos" layoutX="398.0" layoutY="64.0" prefWidth="150.0" />
             <Label layoutX="21.0" layoutY="112.0" prefHeight="20.0" prefWidth="160.0" text="Fecha primer pago" />
             <DatePicker fx:id="dtpFechaInicio" layoutX="181.0" layoutY="107.0" />
-            <ComboBox fx:id="cmbPlazos" layoutX="398.0" layoutY="64.0" prefWidth="150.0" />
+            <Label layoutX="21.0" layoutY="157.0" prefHeight="20.0" prefWidth="176.0" text="Tasa interés anual" />
+            <TextField fx:id="txtInteresAnual" layoutX="181.0" layoutY="152.0" styleClass="inputs" />
+            <Label layoutX="21.0" layoutY="197.0" prefHeight="20.0" prefWidth="145.0" text="Dinero por plazo" />
+            <TextField fx:id="txtPlazosDinero" editable="false" layoutX="181.0" layoutY="194.0" styleClass="inputs" />
             <Button alignment="CENTER" layoutX="407.0" layoutY="190.0" minHeight="39.0" minWidth="110.0" mnemonicParsing="false" onAction="#CalcularPagoMensual" text="Calcular">
                <font>
                   <Font size="18.0" />
@@ -39,6 +34,11 @@
             </Button>
             <Label layoutX="21.0" layoutY="248.0" prefHeight="20.0" prefWidth="110.0" text="Tipo de pago" />
             <ComboBox fx:id="cmbTipo" layoutX="181.0" layoutY="243.0" prefWidth="150.0" />
+            <Button alignment="CENTER" layoutX="621.0" layoutY="229.0" minHeight="39.0" minWidth="110.0" mnemonicParsing="false" onAction="#NuevoPagoMensual" text="Nuevo Pago">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
          </children>
          <styleClass>
             <String fx:value="card" />
@@ -52,7 +52,7 @@
             <TableColumn fx:id="colCantidadPagada" prefWidth="108.0" text="Ya pagado" />
             <TableColumn fx:id="colCantidadRestante" minWidth="0.0" prefWidth="114.0" text="Restante" />
             <TableColumn fx:id="colDineroPlazo" prefWidth="171.0" text="Dinero por Plazo" />
-            <TableColumn fx:id="colProximoPlazo" prefWidth="200.0" text="Proximo Plazo" />
+            <TableColumn fx:id="colProximoPlazo" prefWidth="200.0" text="Próximo Plazo" />
          </columns>
       </TableView>
    </children>

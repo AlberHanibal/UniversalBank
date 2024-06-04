@@ -118,7 +118,7 @@ public class ControladorPagosRecurrentes {
         cmbPlazos.getItems().addAll("Meses", "Años");
         cmbPlazos.getSelectionModel().selectFirst();
 
-        cmbTipo.getItems().addAll("Prestamo", "Hipoteca");
+        cmbTipo.getItems().addAll("Préstamo", "Hipoteca");
         cmbTipo.getSelectionModel().selectFirst();
     }
 

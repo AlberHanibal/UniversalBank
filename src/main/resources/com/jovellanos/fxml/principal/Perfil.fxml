@@ -69,7 +69,7 @@
                   <Font name="System Italic" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="35.0" layoutY="80.0" prefHeight="35.0" prefWidth="113.0" text="Telefono: ">
+            <Label layoutX="35.0" layoutY="80.0" prefHeight="35.0" prefWidth="113.0" text="Teléfono: ">
                <font>
                   <Font size="24.0" />
                </font>
@@ -89,7 +89,7 @@
                   <Font name="System Italic" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="35.0" layoutY="168.0" prefHeight="35.0" prefWidth="245.0" text="Correo Electronico:">
+            <Label layoutX="35.0" layoutY="168.0" prefHeight="35.0" prefWidth="245.0" text="Correo Electrónico:">
                <font>
                   <Font size="24.0" />
                </font>
