@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 <?import java.lang.String?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -16,7 +12,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1260.0" styleClass="fondo" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jovellanos.controladores.principal.ControladorTarjetas">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1260.0" styleClass="fondo" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jovellanos.controladores.principal.ControladorTarjetas">
    <children>
       <Pane layoutX="21.0" layoutY="329.0" prefHeight="215.0" prefWidth="802.0">
          <children>
@@ -65,46 +61,42 @@
             </Button>
             <Pane fx:id="pnlTarjetas" layoutX="54.0" layoutY="27.0" prefHeight="161.0" prefWidth="355.0" styleClass="Etiquetas">
                <children>
-                  <Label fx:id="lblIDTarjeta" layoutX="15.0" layoutY="8.0" prefHeight="35.0" prefWidth="325.0" text="ID: 000-000">
+                  <Label fx:id="lblTipo" layoutX="14.0" layoutY="59.0" prefHeight="20.0" prefWidth="325.0" styleClass="textoBlanco" text="Tipo de Tarjeta:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblNumero" layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="325.0" styleClass="textoBlanco">
                      <font>
                         <Font name="System Bold Italic" size="24.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lblTipo" layoutX="16.0" layoutY="105.0" prefHeight="20.0" prefWidth="155.0" text="Tipo de Tarjeta:">
+                  <Label fx:id="lblCVV" layoutX="14.0" layoutY="81.0" prefHeight="20.0" prefWidth="133.0" styleClass="textoBlanco" text="Código CVV: ">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lblNumero" layoutX="15.0" layoutY="43.0" prefHeight="20.0" prefWidth="325.0" text="Numero: ">
+                  <Label fx:id="lblLimite" layoutX="14.0" layoutY="103.0" prefHeight="20.0" prefWidth="325.0" styleClass="textoBlanco" text="Límite Diario: ">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lblCVV" layoutX="15.0" layoutY="63.0" prefHeight="20.0" prefWidth="133.0" text="Codigo CVV: ">
+                  <Label fx:id="lblPin" layoutX="155.0" layoutY="79.0" prefHeight="20.0" prefWidth="151.0" styleClass="textoBlanco" text="Código Pin: ">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lblLimite" layoutX="15.0" layoutY="85.0" prefHeight="20.0" prefWidth="325.0" text="Limite Diario: ">
+                  <Label fx:id="lblCaducidad" layoutX="14.0" layoutY="123.0" prefHeight="20.0" prefWidth="308.0" styleClass="textoBlanco" text="Caduca el: ">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lblPin" layoutX="178.0" layoutY="63.0" prefHeight="20.0" prefWidth="151.0" text="Codigo Pin: ">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="lblCaducidad" layoutX="14.0" layoutY="127.0" prefHeight="20.0" prefWidth="308.0" text="Caduca el: ">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="lblEstado" layoutX="178.0" layoutY="95.0" prefHeight="20.0" prefWidth="151.0" text="Estado:">
-                     <font>
-                        <Font size="14.0" />
-                     </font>
-                  </Label>
+                  <ImageView fitHeight="131.0" fitWidth="256.0" layoutX="50.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" styleClass="imgTransparente">
+                     <image>
+                        <Image url="@../../assets/icons/logotivo.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="lblEstado" layoutX="14.0" layoutY="42.0" prefHeight="15.0" prefWidth="256.0" styleClass="textoBlanco" />
                </children>
             </Pane>
          </children>

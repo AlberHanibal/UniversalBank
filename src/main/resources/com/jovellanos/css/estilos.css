@@ -4,7 +4,7 @@
     -fx-border-radius: 30px;
     -fx-padding: 5px 10px;
     -fx-background-radius: 30px;
-    -fx-background-color: white;
+    -fx-background-color: -sombra;
 }
 
 .root {
@@ -30,6 +30,10 @@
 
 .textoNormal {
     -fx-font-size: 16px;
+}
+
+.textoBlanco {
+    -fx-text-fill: white;
 }
 
 .button {
@@ -69,6 +73,10 @@
     -fx-border-radius: 50px;
 
     -fx-effect: dropshadow(three-pass-box, -sombra, 10, 0, 2, -1);
+}
+
+.imgTransparente {
+    -fx-opacity: 0.2;
 }
 
 .inputs {

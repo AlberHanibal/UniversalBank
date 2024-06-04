@@ -265,27 +265,25 @@ public class ControladorResumenCuenta {
 
     private void mostrarDatosCuenta() {
         lblID.setText(String.valueOf("ID: " + cuenta.getId()));
-        lblBalance.setText(String.valueOf("Balance: " + cuenta.getBalance() + " €."));
+        lblBalance.setText(String.valueOf("Balance: " + cuenta.getBalance() + " €"));
     }
 
     private void mostrarDatosTarjeta() {
         if (cuenta.getListaTarjetas().isEmpty()) {
             // Si no hay tarjetas, mostrar un mensaje en las etiquetas
-            lblIDTarjeta.setText("Sin tarjetas");
             lblTipo.setText("");
-            lblNumero.setText("");
+            lblNumero.setText("Sin tarjetas");
             lblCVV.setText("");
             lblLimite.setText("");
             lblPin.setText("");
             lblCaducidad.setText("");
         } else {
             // Si hay tarjetas, mostrar los detalles de la tarjeta actual
-            lblIDTarjeta.setText(String.valueOf("ID: " + tarjeta.getId()));
             lblTipo.setText(String.valueOf("Tipo: " + tarjeta.getTipo()));
-            lblNumero.setText(String.valueOf("Numero: " + tarjeta.getNumeroTarjeta()));
-            lblCVV.setText(String.valueOf("Codigo CVV: " + tarjeta.getCVV()));
-            lblLimite.setText((String.valueOf("Limite Diario: " + tarjeta.getLimiteDiario())));
-            lblPin.setText((String.valueOf("Codigo Pin: " + tarjeta.getPin())));
+            lblNumero.setText(String.valueOf(tarjeta.getNumeroTarjeta()));
+            lblCVV.setText(String.valueOf("Código CVV: " + tarjeta.getCVV()));
+            lblLimite.setText((String.valueOf("Límite Diario: " + tarjeta.getLimiteDiario())));
+            lblPin.setText((String.valueOf("Código Pin: " + tarjeta.getPin())));
             lblCaducidad.setText((String.valueOf("Caduca el: " + tarjeta.getFechaCaducidad())));
         }
     }
