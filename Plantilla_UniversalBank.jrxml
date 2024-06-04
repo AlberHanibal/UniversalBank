@@ -64,7 +64,7 @@
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="150" splitType="Stretch">
+		<band height="158" splitType="Stretch">
 			<frame>
 				<reportElement mode="Opaque" x="0" y="0" width="802" height="70" backcolor="#5EBCAC" uuid="d8d9e644-3a32-491d-97cb-a277aff17133"/>
 				<staticText>
@@ -76,7 +76,7 @@
 					<text><![CDATA[Universal Bank]]></text>
 				</staticText>
 				<staticText>
-					<reportElement style="SubTitle" x="480" y="37" width="316" height="29" forecolor="#050000" uuid="cfa21334-0634-4605-9ea7-aca4981f67e4"/>
+					<reportElement style="SubTitle" x="478" y="37" width="316" height="29" forecolor="#050000" uuid="cfa21334-0634-4605-9ea7-aca4981f67e4"/>
 					<textElement textAlignment="Right">
 						<font size="22" isBold="false"/>
 					</textElement>
@@ -86,7 +86,7 @@
 			<frame>
 				<reportElement mode="Opaque" x="0" y="70" width="802" height="32" forecolor="#000000" backcolor="#C4FFF9" uuid="b0c895f6-6dbd-477d-9858-9ad66af087e1"/>
 				<textField pattern="EEEEE dd MMMMM yyyy">
-					<reportElement x="650" y="10" width="144" height="20" forecolor="#030000" uuid="a33fce3b-20c1-4696-873a-fe134d1e7d88"/>
+					<reportElement x="650" y="12" width="144" height="20" forecolor="#030000" uuid="a33fce3b-20c1-4696-873a-fe134d1e7d88"/>
 					<textElement textAlignment="Right">
 						<font size="12"/>
 					</textElement>
@@ -106,10 +106,10 @@
 		<band splitType="Stretch"/>
 	</pageHeader>
 	<columnHeader>
-		<band height="285" splitType="Stretch">
+		<band height="257" splitType="Stretch">
 			<stackedBarChart>
 				<chart evaluationTime="Report">
-					<reportElement x="30" y="10" width="410" height="210" forecolor="#FF0905" backcolor="#FFFFFF" uuid="f03d1bdc-81e3-418d-9704-279b99a97894"/>
+					<reportElement x="30" y="10" width="410" height="190" forecolor="#FF0905" backcolor="#FFFFFF" uuid="f03d1bdc-81e3-418d-9704-279b99a97894"/>
 					<chartTitle color="#FF0905"/>
 					<chartSubtitle>
 						<font size="18"/>
@@ -164,10 +164,10 @@
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="16" splitType="Stretch"/>
+		<band splitType="Stretch"/>
 	</detail>
 	<columnFooter>
-		<band height="7" splitType="Stretch"/>
+		<band splitType="Stretch"/>
 	</columnFooter>
 	<pageFooter>
 		<band height="25" splitType="Stretch">
