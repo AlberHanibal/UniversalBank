@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
@@ -13,12 +16,12 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="1100.0" prefHeight="600.0" prefWidth="1200.0" styleClass="fondo" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jovellanos.controladores.principal.ControladorResumenCuenta">
    <children>
-      <TableView fx:id="tblMovimientos" layoutX="39.0" layoutY="243.0" prefHeight="257.0" prefWidth="568.0">
+      <TableView fx:id="tblMovimientos" layoutX="39.0" layoutY="243.0" prefHeight="257.0" prefWidth="451.0">
         <columns>
-            <TableColumn fx:id="colTipo" prefWidth="114.0" text="Tipo" />
-            <TableColumn fx:id="colAsunto" prefWidth="190.0" text="Asunto" />
-          <TableColumn fx:id="colCantidad" prefWidth="110.0" text="Cantidad" />
-            <TableColumn fx:id="colFecha" minWidth="0.0" prefWidth="153.0" text="Fecha" />
+            <TableColumn fx:id="colTipo" prefWidth="92.0" text="Tipo" />
+            <TableColumn fx:id="colAsunto" prefWidth="155.0" text="Asunto" />
+          <TableColumn fx:id="colCantidad" prefWidth="98.0" text="Cantidad" />
+            <TableColumn fx:id="colFecha" minWidth="0.0" prefWidth="98.0" text="Fecha" />
         </columns>
       </TableView>
       <Pane layoutX="33.0" layoutY="14.0" prefHeight="215.0" prefWidth="463.0" styleClass="card">
@@ -123,11 +126,19 @@
             </Button>
          </children>
       </Pane>
-      <Button layoutX="164.0" layoutY="508.0" mnemonicParsing="false" onAction="#paginaAnterior" text="Anterior" />
-      <Button layoutX="362.0" layoutY="508.0" mnemonicParsing="false" onAction="#paginaSiguiente" text="Siguiente" />
-      <Label fx:id="lblPaginaActual" layoutX="281.0" layoutY="520.0" text="0" />
-      <Label fx:id="lblTotalPaginas" layoutX="332.0" layoutY="520.0" text="10" />
-      <Label layoutX="299.0" layoutY="520.0" text=" de " />
-      <Hyperlink layoutX="611.0" layoutY="252.0" onAction="#VerTodosMovimientos" text="Ver todos" />
+      <Button layoutX="70.0" layoutY="514.0" mnemonicParsing="false" onAction="#paginaAnterior" text="Anterior" />
+      <Button layoutX="279.0" layoutY="514.0" mnemonicParsing="false" onAction="#paginaSiguiente" text="Siguiente" />
+      <Label fx:id="lblPaginaActual" layoutX="198.0" layoutY="526.0" text="0" />
+      <Label fx:id="lblTotalPaginas" layoutX="249.0" layoutY="526.0" text="10" />
+      <Label layoutX="216.0" layoutY="526.0" text=" de " />
+      <Hyperlink layoutX="412.0" layoutY="523.0" onAction="#VerTodosMovimientos" text="Ver todos" />
+      <LineChart fx:id="graficoBalance" layoutX="510.0" layoutY="246.0" prefHeight="315.0" prefWidth="522.0" styleClass="textoNormal">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </LineChart>
    </children>
 </AnchorPane>

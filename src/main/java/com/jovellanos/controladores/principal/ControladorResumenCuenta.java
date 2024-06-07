@@ -1,8 +1,15 @@
 package com.jovellanos.controladores.principal;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.YearMonth;
+import java.time.ZoneId;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import com.jovellanos.App;
 import com.jovellanos.modelo.Cuenta;
@@ -13,6 +20,9 @@ import com.jovellanos.modelo.Tarjeta;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.XYChart;
+import javafx.scene.chart.XYChart.Series;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableCell;
@@ -102,6 +112,9 @@ public class ControladorResumenCuenta {
     @FXML
     private ImageView imgSiguienteCuenta;
 
+    @FXML
+    private LineChart graficoBalance;
+
     public void initialize() {
         tarjeta = RastrearTarjeta("Primera");
 
@@ -145,6 +158,7 @@ public class ControladorResumenCuenta {
 
         mostrarPaginas();
         actualizarTabla();
+        actualizarGrafico();
     }
 
     @FXML
@@ -154,6 +168,7 @@ public class ControladorResumenCuenta {
 
         mostrarPaginas();
         actualizarTabla();
+        actualizarGrafico();
 
         tarjeta = RastrearTarjeta("Primera");
 
@@ -168,6 +183,7 @@ public class ControladorResumenCuenta {
 
         mostrarPaginas();
         actualizarTabla();
+        actualizarGrafico();
 
         tarjeta = RastrearTarjeta("Primera");
 
@@ -366,5 +382,52 @@ public class ControladorResumenCuenta {
             imgSiguienteCuenta.setScaleY(1.0);
         });
         // -------------------------------------------------------------------------
+    }
+
+    private void actualizarGrafico() {
+        ArrayList<YearMonth> listaMeses = generarUltimos12Meses();
+        ArrayList<Double> listaBalance = listaBalance(listaMeses);
+        XYChart.Series dataSeries1 = new XYChart.Series();
+        dataSeries1.setName("Balance");
+        for (int i = 11; i >= 0; i--) {
+            dataSeries1.getData().add(new XYChart.Data(listaMeses.get(i).toString(), listaBalance.get(i + 1)));    
+        }
+        graficoBalance.getData().add(dataSeries1);
+    }
+
+    private ArrayList<Double> listaBalance(ArrayList<YearMonth> listaMeses) {
+        ArrayList<Movimiento> listaMovimientos = cuenta.getHistorialMovimientos();
+        YearMonth fechaComparar;
+        LocalDate fechaMovimiento;
+        double balanceActual = cuenta.getBalance();
+        double balance = balanceActual;
+        ArrayList<Double> listaBalance = new ArrayList<Double>();
+        listaBalance.add(balanceActual);
+        for (YearMonth yearMonth : listaMeses) {
+            for (Movimiento movimiento : listaMovimientos) {
+                fechaMovimiento = movimiento.getFecha().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+                fechaComparar = YearMonth.of(fechaMovimiento.getYear(), fechaMovimiento.getMonthValue());
+                if (yearMonth.equals(fechaComparar)) {
+                    if (movimiento.getCantidad() >= 0) {
+                        balance -= movimiento.getCantidad();
+                    } else {
+                        balance += Math.abs(movimiento.getCantidad());
+                    }
+                }
+            }
+            listaBalance.add(balance);
+        }
+        return listaBalance;
+    }
+
+
+    private ArrayList<YearMonth> generarUltimos12Meses() {
+        ArrayList<YearMonth> listaMeses = new ArrayList<YearMonth>();
+        LocalDate fecha = LocalDate.now();
+        for (int i = 1; i <= 12; i++) {
+            listaMeses.add(YearMonth.of(fecha.getYear(), fecha.getMonthValue()));
+            fecha = fecha.minusMonths(1);
+        }
+        return listaMeses;
     }
 }
