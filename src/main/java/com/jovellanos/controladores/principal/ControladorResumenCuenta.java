@@ -5,11 +5,11 @@ import java.time.LocalDate;
 import java.time.YearMonth;
 import java.time.ZoneId;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
+import java.util.Map;
 
 import com.jovellanos.App;
 import com.jovellanos.modelo.Cuenta;
@@ -22,7 +22,6 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart;
-import javafx.scene.chart.XYChart.Series;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableCell;
@@ -113,7 +112,9 @@ public class ControladorResumenCuenta {
     private ImageView imgSiguienteCuenta;
 
     @FXML
-    private LineChart graficoBalance;
+    private LineChart<String, Number> graficoBalance;
+
+    private final static ArrayList<String> nombreMeses = new ArrayList<String>(Arrays.asList("ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"));
 
     public void initialize() {
         tarjeta = RastrearTarjeta("Primera");
@@ -384,26 +385,30 @@ public class ControladorResumenCuenta {
         // -------------------------------------------------------------------------
     }
 
+    @SuppressWarnings("unchecked")
     private void actualizarGrafico() {
-        ArrayList<YearMonth> listaMeses = generarUltimos12Meses();
-        ArrayList<Double> listaBalance = listaBalance(listaMeses);
-        XYChart.Series dataSeries1 = new XYChart.Series();
-        dataSeries1.setName("Balance");
+        graficoBalance.getData().clear();
+        Map<String, Object> map = generarUltimos12Meses();
+        ArrayList<YearMonth> listaYearMonth = (ArrayList<YearMonth>) map.get("yearMonth");
+        ArrayList<String> listaMeses = (ArrayList<String>) map.get("mesesTexto");
+        ArrayList<Number> listaBalance = listaBalance(listaYearMonth);
+        XYChart.Series<String, Number> balance = new XYChart.Series<String, Number>();
+        balance.setName("Balance");
         for (int i = 11; i >= 0; i--) {
-            dataSeries1.getData().add(new XYChart.Data(listaMeses.get(i).toString(), listaBalance.get(i + 1)));    
+            balance.getData().add(new XYChart.Data<String, Number>(listaMeses.get(i).toString(), listaBalance.get(i + 1)));    
         }
-        graficoBalance.getData().add(dataSeries1);
+        graficoBalance.getData().add(balance);
     }
 
-    private ArrayList<Double> listaBalance(ArrayList<YearMonth> listaMeses) {
+    private ArrayList<Number> listaBalance(ArrayList<YearMonth> listaYearMonth) {
         ArrayList<Movimiento> listaMovimientos = cuenta.getHistorialMovimientos();
         YearMonth fechaComparar;
         LocalDate fechaMovimiento;
-        double balanceActual = cuenta.getBalance();
-        double balance = balanceActual;
-        ArrayList<Double> listaBalance = new ArrayList<Double>();
+        Number balanceActual = cuenta.getBalance();
+        Double balance = (Double) balanceActual;
+        ArrayList<Number> listaBalance = new ArrayList<Number>();
         listaBalance.add(balanceActual);
-        for (YearMonth yearMonth : listaMeses) {
+        for (YearMonth yearMonth : listaYearMonth) {
             for (Movimiento movimiento : listaMovimientos) {
                 fechaMovimiento = movimiento.getFecha().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
                 fechaComparar = YearMonth.of(fechaMovimiento.getYear(), fechaMovimiento.getMonthValue());
@@ -420,14 +425,24 @@ public class ControladorResumenCuenta {
         return listaBalance;
     }
 
-
-    private ArrayList<YearMonth> generarUltimos12Meses() {
-        ArrayList<YearMonth> listaMeses = new ArrayList<YearMonth>();
+    private Map<String, Object> generarUltimos12Meses() {
+        ArrayList<String> listaMeses = new ArrayList<String>();
+        ArrayList<YearMonth> listaYearMonth = new ArrayList<YearMonth>();
         LocalDate fecha = LocalDate.now();
+        YearMonth fechaTransicion;
         for (int i = 1; i <= 12; i++) {
-            listaMeses.add(YearMonth.of(fecha.getYear(), fecha.getMonthValue()));
+            fechaTransicion = YearMonth.of(fecha.getYear(), fecha.getMonthValue());
+            listaYearMonth.add(fechaTransicion);
             fecha = fecha.minusMonths(1);
+            if (fechaTransicion.getMonthValue() == 12 || fechaTransicion.getMonthValue() == 1) {
+                listaMeses.add(nombreMeses.get(fechaTransicion.getMonthValue() - 1) + "-" + fechaTransicion.getYear());
+            } else {
+                listaMeses.add(nombreMeses.get(fechaTransicion.getMonthValue() - 1));
+            }
         }
-        return listaMeses;
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("yearMonth", listaYearMonth);
+        map.put("mesesTexto", listaMeses);
+        return map;
     }
 }

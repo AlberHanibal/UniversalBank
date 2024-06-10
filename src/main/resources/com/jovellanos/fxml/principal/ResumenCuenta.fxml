@@ -132,7 +132,7 @@
       <Label fx:id="lblTotalPaginas" layoutX="249.0" layoutY="526.0" text="10" />
       <Label layoutX="216.0" layoutY="526.0" text=" de " />
       <Hyperlink layoutX="412.0" layoutY="523.0" onAction="#VerTodosMovimientos" text="Ver todos" />
-      <LineChart fx:id="graficoBalance" layoutX="510.0" layoutY="246.0" prefHeight="315.0" prefWidth="522.0" styleClass="textoNormal">
+      <LineChart fx:id="graficoBalance" animated="false" layoutX="521.0" layoutY="243.0" prefHeight="311.0" prefWidth="522.0" styleClass="textoGrande">
         <xAxis>
           <CategoryAxis side="BOTTOM" />
         </xAxis>

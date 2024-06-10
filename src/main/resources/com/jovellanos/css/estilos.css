@@ -32,6 +32,10 @@
     -fx-font-size: 16px;
 }
 
+.textoGrande {
+    -fx-font-size: 20px;
+}
+
 .textoBlanco {
     -fx-text-fill: white;
 }
