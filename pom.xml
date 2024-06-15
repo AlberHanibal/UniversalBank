@@ -56,10 +56,28 @@
                         <!-- Usage: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>com.jovellanos.App</mainClass>
+                            <mainClass>com.jovellanos.newApp</mainClass>
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+            <!--
+            Usage: mvn assembly:assembly 
+                   java -jar target/universalbank-1.0-jar-with-dependencies.jar
+            -->
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.1</version>
+                <configuration>
+                    <descriptorRefs>
+                    <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <archive>
+                    <manifest>
+                        <mainClass>com.jovellanos.newApp</mainClass>
+                    </manifest>
+                    </archive>
+                </configuration>
             </plugin>
         </plugins>
     </build>
