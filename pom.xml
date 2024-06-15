@@ -64,7 +64,7 @@
             <plugin>
             <!--
             Usage: mvn assembly:assembly 
-                   java -jar target/universalbank-1.0-jar-with-dependencies.jar
+                   java -jar target/universalbank-1.0-SNAPSHOT-jar-with-dependencies.jar
             -->
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>2.1</version>
