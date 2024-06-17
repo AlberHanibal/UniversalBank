@@ -30,12 +30,12 @@
         "gastos": 0
     },
     {
-        "ingresos": 0,
+        "ingresos": 100,
         "mes": "ene-2024",
         "gastos": 506.69
     },
     {
-        "ingresos": 0,
+        "ingresos": 100,
         "mes": "feb",
         "gastos": 506.69
     },
@@ -45,9 +45,9 @@
         "gastos": 0
     },
     {
-        "ingresos": 9500,
+        "ingresos": 1500,
         "mes": "abr",
-        "gastos": 0
+        "gastos": 200
     },
     {
         "ingresos": 0,

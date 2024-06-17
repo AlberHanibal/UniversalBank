@@ -133,7 +133,7 @@ public class ControladorLogin {
         ArrayList<Movimiento> listaMovimientos3 = CrearGrupoMovimientos3();
         ArrayList<GastosPeriodicos> listaGastos3 = new ArrayList<GastosPeriodicos>();
 
-        Cuenta cuenta1 = new Cuenta(673932532, 15310.2, listaTarjetas, listaMovimientos, listaGastos);
+        Cuenta cuenta1 = new Cuenta(673932532, 7310.2, listaTarjetas, listaMovimientos, listaGastos);
         Cuenta cuenta2 = new Cuenta(489301204, 450.99, listaTarjetas2, listaMovimientos2, listaGastos2);
         Cuenta cuenta3 = new Cuenta(062373263, 2100.0, listaTarjetas3, listaMovimientos3, listaGastos3);
         
@@ -196,7 +196,7 @@ public class ControladorLogin {
         //---------------------Movimiento 3----------------------------------------
         movimiento = new Movimiento();
         movimiento.setCantidad(-390.5);
-        movimiento.setAsunto("Prestamo a pagar");
+        movimiento.setAsunto("Préstamo a pagar");
         movimiento.setTipo("Pago");
 
         try {
@@ -240,6 +240,21 @@ public class ControladorLogin {
 
         //---------------------Movimiento 6----------------------------------------
         movimiento = new Movimiento();
+        movimiento.setCantidad(100.0);
+        movimiento.setAsunto("Bizum");
+        movimiento.setTipo("Ingreso");
+
+        try {
+            Date date = dateFormat.parse("12/1/2024");
+            movimiento.setFecha(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        
+        historialMovimientos.add(movimiento);
+
+        //---------------------Movimiento 7----------------------------------------
+        movimiento = new Movimiento();
         movimiento.setCantidad(-506.69);
         movimiento.setAsunto("Pago de la Hipoteca");
         movimiento.setTipo("Hipoteca");
@@ -253,9 +268,24 @@ public class ControladorLogin {
         
         historialMovimientos.add(movimiento);
 
-        //---------------------Movimiento 7----------------------------------------
+        //---------------------Movimiento 8----------------------------------------
         movimiento = new Movimiento();
-        movimiento.setCantidad(9500.0);
+        movimiento.setCantidad(100.0);
+        movimiento.setAsunto("Bizum");
+        movimiento.setTipo("Ingreso");
+
+        try {
+            Date date = dateFormat.parse("13/2/2024");
+            movimiento.setFecha(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        
+        historialMovimientos.add(movimiento);
+
+        //---------------------Movimiento 9----------------------------------------
+        movimiento = new Movimiento();
+        movimiento.setCantidad(1500.0);
         movimiento.setAsunto("Ganancias");
         movimiento.setTipo("Ingreso");
 
@@ -268,7 +298,22 @@ public class ControladorLogin {
         
         historialMovimientos.add(movimiento);
 
-        //---------------------Movimiento 8----------------------------------------
+        //---------------------Movimiento 10----------------------------------------
+        movimiento = new Movimiento();
+        movimiento.setCantidad(-200.0);
+        movimiento.setAsunto("Bizum");
+        movimiento.setTipo("Pago");
+
+        try {
+            Date date = dateFormat.parse("22/4/2024");
+            movimiento.setFecha(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        
+        historialMovimientos.add(movimiento);
+
+        //---------------------Movimiento 11----------------------------------------
         movimiento = new Movimiento();
         movimiento.setCantidad(-286.12);
         movimiento.setAsunto("Deuda a un amigo");
@@ -364,7 +409,7 @@ public class ControladorLogin {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         try {
             Date date = dateFormat.parse("25/8/2026");
-            Tarjeta nuevaTarjeta = new Tarjeta(532910252, "Credito", "4728-1250-0192-2495", "831", 500.0, "8102", date);
+            Tarjeta nuevaTarjeta = new Tarjeta(532910252, "Crédito", "4728-1250-0192-2495", "831", 500.0, "8102", date);
 
             listaTarjetas.add(nuevaTarjeta);
         } catch (ParseException e) {
@@ -374,7 +419,7 @@ public class ControladorLogin {
         //---------------------Tarjeta 2----------------------------------------
         try {
             Date date = dateFormat.parse("15/3/2025");
-            Tarjeta nuevaTarjeta = new Tarjeta(216399039, "Credito", "3284-0924-8432-2285", "188", 200.0, "1395", date);
+            Tarjeta nuevaTarjeta = new Tarjeta(216399039, "Crédito", "3284-0924-8432-2285", "188", 200.0, "1395", date);
             
             listaTarjetas.add(nuevaTarjeta);
         } catch (ParseException e) {
@@ -384,7 +429,7 @@ public class ControladorLogin {
         //---------------------Tarjeta 3----------------------------------------
         try {
             Date date = dateFormat.parse("1/1/2025");
-            Tarjeta nuevaTarjeta = new Tarjeta(593010298, "Debito", "0992-1374-6431-0192", "741", 250.0, "9412", date);
+            Tarjeta nuevaTarjeta = new Tarjeta(593010298, "Débito", "0992-1374-6431-0192", "741", 250.0, "9412", date);
             
             listaTarjetas.add(nuevaTarjeta);
         } catch (ParseException e) {
@@ -400,7 +445,7 @@ public class ControladorLogin {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         try {
             Date date = dateFormat.parse("21/3/2026");
-            Tarjeta nuevaTarjeta = new Tarjeta(68301002, "Credito", "2860-2012-2068-9175", "108", 500.0, "9376", date);
+            Tarjeta nuevaTarjeta = new Tarjeta(68301002, "Crédito", "2860-2012-2068-9175", "108", 500.0, "9376", date);
 
             listaTarjetas.add(nuevaTarjeta);
         } catch (ParseException e) {
